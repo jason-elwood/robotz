@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+// import the Appirater class
+//#import "Appirater.h"
+
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
