@@ -25,7 +25,7 @@
 - (void)loadStore
 {
     constants = [[Constants alloc] init];
-    NSLog(@"loadStore called.");
+    //NSLog(@"loadStore called.");
     // restarts any purchases if they were interrupted last time the app was open
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     
@@ -38,7 +38,7 @@
 //
 - (BOOL)canMakePurchases
 {
-    NSLog(@"canMakePurchases called.");
+    //NSLog(@"canMakePurchases called.");
     return [SKPaymentQueue canMakePayments];
 }
 
@@ -49,7 +49,7 @@
     productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIdentifiers];
     productsRequest.delegate = self;
     [productsRequest start];
-    NSLog(@"Robotz Products returned : %@", productIdentifiers);
+    //NSLog(@"Robotz Products returned : %@", productIdentifiers);
 }
 
 #pragma mark -
@@ -61,8 +61,9 @@
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
     [delegate productsLoaded];
+    [delegateBS productLoaded];
     NSArray *products = response.products;
-    NSLog(@"response.products = %@", response.products);
+    //NSLog(@"response.products = %@", response.products);
     oneMillionFiveHundredThousandCoins = [products  objectAtIndex:0];
     twentyFiveThousandCoins = [products  objectAtIndex:1];
     threeHundredThousandCoins = [products  objectAtIndex:2];
@@ -71,16 +72,16 @@
     skProducts = [[NSMutableArray alloc] initWithObjects:twentyFiveThousandCoins, threeHundredThousandCoins, oneMillionFiveHundredThousandCoins, threeMillionSevenHundredFiftyThousandCoins, threeResurrections, nil];
     
     for (int i = 0; i < [products count]; i++) {
-        SKProduct *exampleProduct = [products objectAtIndex:i];
-        NSLog(@"Product title: %@" , exampleProduct.localizedTitle);
-        NSLog(@"Product description: %@" , exampleProduct.localizedDescription);
-        NSLog(@"Product price: %@" , exampleProduct.price);
-        NSLog(@"Product id: %@" , exampleProduct.productIdentifier);
+        //SKProduct *exampleProduct = [products objectAtIndex:i];
+        //NSLog(@"Product title: %@" , exampleProduct.localizedTitle);
+        //NSLog(@"Product description: %@" , exampleProduct.localizedDescription);
+        //NSLog(@"Product price: %@" , exampleProduct.price);
+        //NSLog(@"Product id: %@" , exampleProduct.productIdentifier);
     }
     
     for (NSString *invalidProductId in response.invalidProductIdentifiers)
     {
-        NSLog(@"Invalid product id: %@" , invalidProductId);
+        //NSLog(@"Invalid product id: %@" , invalidProductId);
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseManagerProductsFetchedNotification object:self userInfo:nil];
@@ -97,35 +98,35 @@
 {
     SKPayment *payment = [SKPayment paymentWithProduct:[skProducts objectAtIndex:0]];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
-    NSLog(@"purchaseTwentyFiveThousandCoins.");
+    //NSLog(@"purchaseTwentyFiveThousandCoins.");
 }
 
 - (void)purchaseThreeHundredThousandCoins
 {
     SKPayment *payment = [SKPayment paymentWithProduct:[skProducts objectAtIndex:1]];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
-    NSLog(@"purchaseThreeHundredThousandCoins.");
+    //NSLog(@"purchaseThreeHundredThousandCoins.");
 }
 
 - (void)purchaseOneMillionFiveHundredThousandCoins
 {
     SKPayment *payment = [SKPayment paymentWithProduct:[skProducts objectAtIndex:2]];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
-    NSLog(@"purchaseOneMillionFiveHundredThousandCoins.");
+    //NSLog(@"purchaseOneMillionFiveHundredThousandCoins.");
 }
 
 - (void)purchaseThreeMillionSevenHundredFiftyCoins
 {
     SKPayment *payment = [SKPayment paymentWithProduct:[skProducts objectAtIndex:3]];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
-    NSLog(@"purchaseThreeMillionSevenHundredFiftyCoins.");
+    //NSLog(@"purchaseThreeMillionSevenHundredFiftyCoins.");
 }
 
 - (void)purchaseThreeResurrections
 {
     SKPayment *payment = [SKPayment paymentWithProduct:[skProducts objectAtIndex:4]];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
-    NSLog(@"purchaseThreeResurrections. skProducts : %@", skProducts);
+    //NSLog(@"purchaseThreeResurrections. skProducts : %@", skProducts);
 }
 
 #pragma -
@@ -141,27 +142,27 @@
         // save the transaction receipt to disk
         [[NSUserDefaults standardUserDefaults] setValue:transaction.transactionReceipt forKey:constants.PURCHASETWENTYFIVETHOUSANDCOINS];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"Saved a record in userdefaults of 25,000 coins.");
+        //NSLog(@"Saved a record in userdefaults of 25,000 coins.");
     } else if ([transaction.payment.productIdentifier isEqualToString:kInAppPurchaseOneNinetyNinePurchase]) {
         // save the transaction receipt to disk
         [[NSUserDefaults standardUserDefaults] setValue:transaction.transactionReceipt forKey:constants.PURCHASETHREEHUNDREDTHOUSANDCOINS];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"Saved a record in userdefaults of 300,000 coins.");
+        //NSLog(@"Saved a record in userdefaults of 300,000 coins.");
     } else if ([transaction.payment.productIdentifier isEqualToString:kInAppPurchaseFourNinetyNinePurchase]) {
         // save the transaction receipt to disk
         [[NSUserDefaults standardUserDefaults] setValue:transaction.transactionReceipt forKey:constants.PURCHASEONEMILLIONFIVEHUNDREDTHOUSANDCOINS];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"Saved a record in userdefaults of 1,500,000 coins.");
+        //NSLog(@"Saved a record in userdefaults of 1,500,000 coins.");
     } else if ([transaction.payment.productIdentifier isEqualToString:kInAppPurchaseNineNinetyNinePurchase]) {
         // save the transaction receipt to disk
         [[NSUserDefaults standardUserDefaults] setValue:transaction.transactionReceipt forKey:constants.PURCHASETHREEMILLIONSEVENHUNDREDFIFTYTHOUSANDCOINS];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"Saved a record in userdefaults of 3,750,000 coins.");
+        //NSLog(@"Saved a record in userdefaults of 3,750,000 coins.");
     } else if ([transaction.payment.productIdentifier isEqualToString:kInAppPurchaseThreeResurrections]) {
         // save the transaction receipt to disk
         [[NSUserDefaults standardUserDefaults] setValue:transaction.transactionReceipt forKey:constants.PURCHASETHREEMILLIONSEVENHUNDREDFIFTYTHOUSANDCOINS];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"Saved a record in userdefaults of 3 resurrections coins.");
+        //NSLog(@"Saved a record in userdefaults of 3 resurrections coins.");
     }
 }
 
@@ -171,7 +172,7 @@
 //
 - (void)provideContent:(NSString *)productId
 {
-    NSLog(@"Providing content for productId : %@", productId);
+    //NSLog(@"Providing content for productId : %@", productId);
     if ([productId isEqualToString:kInAppPurchaseNinetyNineCentPurchase])
     {
         // enable the features
@@ -179,7 +180,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         [delegate updateTotalCoinsLabel];
         [delegate transactionCompleteTransType:0];
-        NSLog(@"25,000 coins awarded and saved to the device.");
+        //NSLog(@"25,000 coins awarded and saved to the device.");
     }
     else if ([productId isEqualToString:kInAppPurchaseOneNinetyNinePurchase]) {
         // enable the features
@@ -187,7 +188,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         [delegate updateTotalCoinsLabel];
         [delegate transactionCompleteTransType:1];
-        NSLog(@"300,000 coins awarded and saved to the device.");
+        //NSLog(@"300,000 coins awarded and saved to the device.");
     }
     else if ([productId isEqualToString:kInAppPurchaseFourNinetyNinePurchase]) {
         // enable the features
@@ -195,7 +196,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         [delegate updateTotalCoinsLabel];
         [delegate transactionCompleteTransType:2];
-        NSLog(@"1,500,000 coins awarded and saved to the device.");
+        //NSLog(@"1,500,000 coins awarded and saved to the device.");
     }
     else if ([productId isEqualToString:kInAppPurchaseNineNinetyNinePurchase]) {
         // enable the features
@@ -203,7 +204,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         [delegate updateTotalCoinsLabel];
         [delegate transactionCompleteTransType:3];
-        NSLog(@"3,750,000 coins awarded and saved to the device.");
+        //NSLog(@"3,750,000 coins awarded and saved to the device.");
     }
     else if ([productId isEqualToString:kInAppPurchaseThreeResurrections]) {
         // enable the features
@@ -212,14 +213,15 @@
         }
         [[NSUserDefaults standardUserDefaults] synchronize];
         [delegateBS threeResurrectionsPurchased];
-        NSLog(@"3 resurrections awarded and saved to the device.");
+        //NSLog(@"3 resurrections awarded and saved to the device.");
     }
     [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
 {
-    NSLog(@"Canceled : %@", error);// test error.code, if it equals SKErrorPaymentCancelled it's been cancelled
+    //NSLog(@"Canceled : %@", error);// test error.code, if it equals SKErrorPaymentCancelled it's been cancelled
+    [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
 }
 
 //
@@ -251,7 +253,7 @@
     [self recordTransaction:transaction];
     [self provideContent:transaction.payment.productIdentifier];
     [self finishTransaction:transaction wasSuccessful:YES];
-    NSLog(@"Transaction complete and recorded.");
+    //NSLog(@"Transaction complete and recorded.");
 }
 
 //
@@ -296,16 +298,20 @@
         {
             case SKPaymentTransactionStatePurchased:
                 [self completeTransaction:transaction];
-                NSLog(@"transaction completed");
+                [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+                //NSLog(@"transaction completed");
                 break;
             case SKPaymentTransactionStateFailed:
                 [self failedTransaction:transaction];
-                NSLog(@"transaction failed");
+                //NSLog(@"transaction failed");
                 [delegateBS transactionFailed];
+                [delegate transactionFailed];
+                [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
                 break;
             case SKPaymentTransactionStateRestored:
                 [self restoreTransaction:transaction];
-                NSLog(@"transaction restored");
+                [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+                //NSLog(@"transaction restored");
             default:
                 break;
         }

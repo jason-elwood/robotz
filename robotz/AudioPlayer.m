@@ -83,7 +83,7 @@
         AudioServicesPlaySystemSound(audioEffect);
     }
     else {
-        NSLog(@"error, file not found: %@", path);
+        //NSLog(@"error, file not found: %@", path);
     }
 }
 
@@ -91,7 +91,7 @@
 {
     [self StopMusic:player];
     musicIsPlaying = NO;
-    NSLog(@"stopping music : %@", player);
+    //NSLog(@"stopping music : %@", player);
 }
 
 - (void)PlayMusic:(NSString*)strSoundFileName atVolume:(float)vol
@@ -132,7 +132,7 @@
     player.volume = vol;
     
 	if (player == nil)
-		NSLog(@"%@",[error description]);
+		NSLog(@"%@",[error description]); // The way this method is currently set up (a string check with a return), this will never get called.
 	else
 		[player play];
 }
@@ -226,7 +226,7 @@
 
 - (void)turnOffAllSoundFx
 {
-    NSLog(@"turnOffAllSoundFx");
+   // NSLog(@"turnOffAllSoundFx");
     playSoundFx = NO;
 }
 
@@ -240,7 +240,7 @@
 
 - (void)turnOnAllMusic:(NSString *)musicString
 {
-    NSLog(@"turnOnAllMusic");
+    //NSLog(@"turnOnAllMusic");
     playMusic = YES;
     if ([musicString isEqualToString:constants.MUSICMAINMENU]) {
         [self PlayMusic:constants.MUSICMAINMENU atVolume:1.0];
@@ -253,7 +253,7 @@
 
 - (void)turnOnAllSoundFx
 {
-    NSLog(@"turnOnAllSoundFx");
+    //NSLog(@"turnOnAllSoundFx");
     playSoundFx = YES;
 }
 

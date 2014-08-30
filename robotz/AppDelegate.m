@@ -26,6 +26,9 @@
     
     //[Appirater appLaunched];
     
+//    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+//    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
     return YES;
 }
 
@@ -42,7 +45,7 @@
     notification.alertBody = @"Ready to destroy some more robotz?";
     //notification.soundName = UILocalNotificationDefaultSoundName;
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    NSLog(@"app entered background.");
+    //NSLog(@"app entered background.");
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }

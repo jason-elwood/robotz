@@ -15,5 +15,6 @@
 
 - (void)getPlayerDataFromDatabase;
 - (NSString *)getAppURL;
+- (NSString *)getFacebookMessage;
 
 @end

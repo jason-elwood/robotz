@@ -23,9 +23,6 @@
 		CE2BB1D3180115CF005117A8 /* awesomeTextPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB1D0180115CF005117A8 /* awesomeTextPopup@2x.png */; };
 		CE2BB1D4180115CF005117A8 /* greatTextPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB1D1180115CF005117A8 /* greatTextPopup@2x.png */; };
 		CE2BB1D5180115CF005117A8 /* niceTextPopup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB1D2180115CF005117A8 /* niceTextPopup@2x.png */; };
-		CE2BB1D9180144A9005117A8 /* icon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB1D6180144A9005117A8 /* icon76x76.png */; };
-		CE2BB1DA180144A9005117A8 /* icon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB1D7180144A9005117A8 /* icon144x144.png */; };
-		CE2BB1DB180144A9005117A8 /* icon152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB1D8180144A9005117A8 /* icon152x152.png */; };
 		CE2BB1DE1801DDB0005117A8 /* EncouragingWords.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2BB1DD1801DDB0005117A8 /* EncouragingWords.m */; };
 		CE2BB1E21802005B005117A8 /* voiceNice.aif in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB1DF1802005B005117A8 /* voiceNice.aif */; };
 		CE2BB1E31802005B005117A8 /* voiceGreat.aif in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB1E01802005B005117A8 /* voiceGreat.aif */; };
@@ -136,6 +133,17 @@
 		CE660DB717FFB27500A03C59 /* purchaseThreeRepairs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE660DB617FFB27500A03C59 /* purchaseThreeRepairs@2x.png */; };
 		CE660DB917FFB5D100A03C59 /* keepPlayingButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE660DB817FFB5D100A03C59 /* keepPlayingButton@2x.png */; };
 		CE660DBB17FFB5E400A03C59 /* endMatchButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE660DBA17FFB5E400A03C59 /* endMatchButton@2x.png */; };
+		CE69C4C3181E3DBF00742F36 /* icon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4BC181E3DBF00742F36 /* icon57x57.png */; };
+		CE69C4C4181E3DBF00742F36 /* icon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4BD181E3DBF00742F36 /* icon72x72.png */; };
+		CE69C4C5181E3DBF00742F36 /* icon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4BE181E3DBF00742F36 /* icon76x76.png */; };
+		CE69C4C6181E3DBF00742F36 /* icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4BF181E3DBF00742F36 /* icon114x114.png */; };
+		CE69C4C7181E3DBF00742F36 /* icon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4C0181E3DBF00742F36 /* icon120x120.png */; };
+		CE69C4C8181E3DBF00742F36 /* icon144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4C1181E3DBF00742F36 /* icon144x144.png */; };
+		CE69C4C9181E3DBF00742F36 /* icon152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4C2181E3DBF00742F36 /* icon152x152.png */; };
+		CE69C4CC181E40D200742F36 /* icon58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4CA181E40D200742F36 /* icon58x58.png */; };
+		CE69C4CD181E40D200742F36 /* icon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4CB181E40D200742F36 /* icon80x80.png */; };
+		CE69C4CF181E413B00742F36 /* icon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4CE181E413B00742F36 /* icon29x29.png */; };
+		CE69C4D1181E4A8700742F36 /* RobotzAvailableNowGraphicBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = CE69C4D0181E4A8700742F36 /* RobotzAvailableNowGraphicBlue.png */; };
 		CE89F93817E93CAB00C6DF0E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CE89F93717E93CAB00C6DF0E /* Default.png */; };
 		CE89F93A17E94BF900C6DF0E /* startScreeniPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE89F93917E94BF900C6DF0E /* startScreeniPhone@2x.png */; };
 		CE89F93D17E95A4500C6DF0E /* playButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE89F93B17E95A4500C6DF0E /* playButton@2x.png */; };
@@ -185,8 +193,6 @@
 		CE92CFAB18187FC0008EF793 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE92CFAA18187FC0008EF793 /* Images.xcassets */; };
 		CE92CFAE181880FF008EF793 /* loadingGraphicLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE92CFAC181880FF008EF793 /* loadingGraphicLarge@2x.png */; };
 		CE92CFAF181880FF008EF793 /* loadingGraphicSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE92CFAD181880FF008EF793 /* loadingGraphicSmall@2x.png */; };
-		CE9EA3B117FD0062000201C8 /* icon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9EA3B017FD0062000201C8 /* icon120x120.png */; };
-		CE9EA3B317FD009A000201C8 /* icon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = CE9EA3B217FD009A000201C8 /* icon72x72.png */; };
 		CEBAE47917EBC0B800A24438 /* settingsButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBAE47017EBC0B800A24438 /* settingsButton@2x.png */; };
 		CEBAE47A17EBC0B800A24438 /* shopButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBAE47117EBC0B800A24438 /* shopButton@2x.png */; };
 		CEBAE47B17EBC0B800A24438 /* headToHeadButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBAE47217EBC0B800A24438 /* headToHeadButton@2x.png */; };
@@ -251,8 +257,6 @@
 		CEEAB4AE17E91B63001DA8AC /* PopupModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB4AD17E91B63001DA8AC /* PopupModule.m */; };
 		CEEAB4B417E91BA5001DA8AC /* PlayerHudModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB4B317E91BA5001DA8AC /* PlayerHudModule.m */; };
 		CEEAB4B717E91BBF001DA8AC /* OpponentBattleModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB4B617E91BBF001DA8AC /* OpponentBattleModule.m */; };
-		CEEAB4BC17E91F64001DA8AC /* icon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEAB4BB17E91F64001DA8AC /* icon57x57.png */; };
-		CEEAB4BE17E91FA9001DA8AC /* icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEAB4BD17E91FA9001DA8AC /* icon114x114.png */; };
 		CEEAB4C217E92807001DA8AC /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEAB4C117E92807001DA8AC /* Default-Portrait@2x~ipad.png */; };
 		CEEAB4C417E9285D001DA8AC /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEAB4C317E9285D001DA8AC /* Default-Portrait~ipad.png */; };
 		CEEAB4C817E9299A001DA8AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEAB4C717E92999001DA8AC /* Default-568h@2x.png */; };
@@ -286,9 +290,6 @@
 		CE2BB1D0180115CF005117A8 /* awesomeTextPopup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "awesomeTextPopup@2x.png"; sourceTree = "<group>"; };
 		CE2BB1D1180115CF005117A8 /* greatTextPopup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greatTextPopup@2x.png"; sourceTree = "<group>"; };
 		CE2BB1D2180115CF005117A8 /* niceTextPopup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "niceTextPopup@2x.png"; sourceTree = "<group>"; };
-		CE2BB1D6180144A9005117A8 /* icon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon76x76.png; sourceTree = "<group>"; };
-		CE2BB1D7180144A9005117A8 /* icon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon144x144.png; sourceTree = "<group>"; };
-		CE2BB1D8180144A9005117A8 /* icon152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon152x152.png; sourceTree = "<group>"; };
 		CE2BB1DC1801DDB0005117A8 /* EncouragingWords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncouragingWords.h; sourceTree = "<group>"; };
 		CE2BB1DD1801DDB0005117A8 /* EncouragingWords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncouragingWords.m; sourceTree = "<group>"; };
 		CE2BB1DF1802005B005117A8 /* voiceNice.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = voiceNice.aif; sourceTree = "<group>"; };
@@ -365,7 +366,7 @@
 		CE2EB169181326480016E437 /* greyStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyStar@2x.png"; sourceTree = "<group>"; };
 		CE2EB16B181366610016E437 /* useResurrectionPopup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "useResurrectionPopup@2x.png"; sourceTree = "<group>"; };
 		CE53058717FA830200317BAC /* fireball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fireball@2x.png"; sourceTree = "<group>"; };
-		CE5BBC3717E937AF00ABA2C6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CE5BBC3717E937AF00ABA2C6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		CE5EA1C91805DB3C000F6E30 /* tellYourFriendsText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tellYourFriendsText@2x.png"; sourceTree = "<group>"; };
 		CE5EA1CB18061056000F6E30 /* RobotzComingSoonGraphic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotzComingSoonGraphic.png; sourceTree = "<group>"; };
 		CE5EA1CF18075519000F6E30 /* robot3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "robot3@2x.png"; sourceTree = "<group>"; };
@@ -412,7 +413,18 @@
 		CE660DB617FFB27500A03C59 /* purchaseThreeRepairs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "purchaseThreeRepairs@2x.png"; sourceTree = "<group>"; };
 		CE660DB817FFB5D100A03C59 /* keepPlayingButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keepPlayingButton@2x.png"; sourceTree = "<group>"; };
 		CE660DBA17FFB5E400A03C59 /* endMatchButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "endMatchButton@2x.png"; sourceTree = "<group>"; };
-		CE89F93717E93CAB00C6DF0E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CE69C4BC181E3DBF00742F36 /* icon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57x57.png; sourceTree = "<group>"; };
+		CE69C4BD181E3DBF00742F36 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
+		CE69C4BE181E3DBF00742F36 /* icon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon76x76.png; sourceTree = "<group>"; };
+		CE69C4BF181E3DBF00742F36 /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114x114.png; sourceTree = "<group>"; };
+		CE69C4C0181E3DBF00742F36 /* icon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120x120.png; sourceTree = "<group>"; };
+		CE69C4C1181E3DBF00742F36 /* icon144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon144x144.png; sourceTree = "<group>"; };
+		CE69C4C2181E3DBF00742F36 /* icon152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon152x152.png; sourceTree = "<group>"; };
+		CE69C4CA181E40D200742F36 /* icon58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon58x58.png; sourceTree = "<group>"; };
+		CE69C4CB181E40D200742F36 /* icon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon80x80.png; sourceTree = "<group>"; };
+		CE69C4CE181E413B00742F36 /* icon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon29x29.png; sourceTree = "<group>"; };
+		CE69C4D0181E4A8700742F36 /* RobotzAvailableNowGraphicBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotzAvailableNowGraphicBlue.png; sourceTree = "<group>"; };
+		CE89F93717E93CAB00C6DF0E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		CE89F93917E94BF900C6DF0E /* startScreeniPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startScreeniPhone@2x.png"; sourceTree = "<group>"; };
 		CE89F93B17E95A4500C6DF0E /* playButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playButton@2x.png"; sourceTree = "<group>"; };
 		CE89F93F17E9774E00C6DF0E /* CharacterSelectorModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterSelectorModule.h; sourceTree = "<group>"; };
@@ -469,8 +481,6 @@
 		CE92CFAA18187FC0008EF793 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE92CFAC181880FF008EF793 /* loadingGraphicLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loadingGraphicLarge@2x.png"; sourceTree = "<group>"; };
 		CE92CFAD181880FF008EF793 /* loadingGraphicSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loadingGraphicSmall@2x.png"; sourceTree = "<group>"; };
-		CE9EA3B017FD0062000201C8 /* icon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120x120.png; sourceTree = "<group>"; };
-		CE9EA3B217FD009A000201C8 /* icon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72x72.png; sourceTree = "<group>"; };
 		CEBAE47017EBC0B800A24438 /* settingsButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingsButton@2x.png"; sourceTree = "<group>"; };
 		CEBAE47117EBC0B800A24438 /* shopButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopButton@2x.png"; sourceTree = "<group>"; };
 		CEBAE47217EBC0B800A24438 /* headToHeadButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headToHeadButton@2x.png"; sourceTree = "<group>"; };
@@ -562,11 +572,9 @@
 		CEEAB4B317E91BA5001DA8AC /* PlayerHudModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerHudModule.m; sourceTree = "<group>"; };
 		CEEAB4B517E91BBF001DA8AC /* OpponentBattleModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpponentBattleModule.h; sourceTree = "<group>"; };
 		CEEAB4B617E91BBF001DA8AC /* OpponentBattleModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpponentBattleModule.m; sourceTree = "<group>"; };
-		CEEAB4BB17E91F64001DA8AC /* icon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57x57.png; sourceTree = "<group>"; };
-		CEEAB4BD17E91FA9001DA8AC /* icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114x114.png; sourceTree = "<group>"; };
-		CEEAB4C117E92807001DA8AC /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
-		CEEAB4C317E9285D001DA8AC /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		CEEAB4C717E92999001DA8AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CEEAB4C117E92807001DA8AC /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		CEEAB4C317E9285D001DA8AC /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		CEEAB4C717E92999001DA8AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		CEEAB4D217E92CFA001DA8AC /* DeviceTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTypes.h; sourceTree = "<group>"; };
 		CEEAB4D317E92CFA001DA8AC /* DeviceTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTypes.m; sourceTree = "<group>"; };
 		CEF34A2117F7AD880076E5AA /* HoboStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HoboStd.otf; sourceTree = "<group>"; };
@@ -671,19 +679,17 @@
 		CEEAB44217E90CEE001DA8AC = {
 			isa = PBXGroup;
 			children = (
+				CE69C4CE181E413B00742F36 /* icon29x29.png */,
+				CE69C4BC181E3DBF00742F36 /* icon57x57.png */,
+				CE69C4CA181E40D200742F36 /* icon58x58.png */,
+				CE69C4BD181E3DBF00742F36 /* icon72x72.png */,
+				CE69C4BE181E3DBF00742F36 /* icon76x76.png */,
+				CE69C4CB181E40D200742F36 /* icon80x80.png */,
+				CE69C4BF181E3DBF00742F36 /* icon114x114.png */,
+				CE69C4C0181E3DBF00742F36 /* icon120x120.png */,
+				CE69C4C1181E3DBF00742F36 /* icon144x144.png */,
+				CE69C4C2181E3DBF00742F36 /* icon152x152.png */,
 				CE5EA1DB1807C8FE000F6E30 /* Tapjoy.embeddedframework */,
-				CE89F93717E93CAB00C6DF0E /* Default.png */,
-				CE5BBC3717E937AF00ABA2C6 /* Default@2x.png */,
-				CEEAB4C717E92999001DA8AC /* Default-568h@2x.png */,
-				CEEAB4C317E9285D001DA8AC /* Default-Portrait~ipad.png */,
-				CEEAB4C117E92807001DA8AC /* Default-Portrait@2x~ipad.png */,
-				CE9EA3B217FD009A000201C8 /* icon72x72.png */,
-				CEEAB4BD17E91FA9001DA8AC /* icon114x114.png */,
-				CE9EA3B017FD0062000201C8 /* icon120x120.png */,
-				CEEAB4BB17E91F64001DA8AC /* icon57x57.png */,
-				CE2BB1D6180144A9005117A8 /* icon76x76.png */,
-				CE2BB1D7180144A9005117A8 /* icon144x144.png */,
-				CE2BB1D8180144A9005117A8 /* icon152x152.png */,
 				CEEAB45417E90CEE001DA8AC /* robotz */,
 				CEEAB44D17E90CEE001DA8AC /* Frameworks */,
 				CEEAB44C17E90CEE001DA8AC /* Products */,
@@ -720,6 +726,11 @@
 		CEEAB45417E90CEE001DA8AC /* robotz */ = {
 			isa = PBXGroup;
 			children = (
+				CE89F93717E93CAB00C6DF0E /* Default.png */,
+				CE5BBC3717E937AF00ABA2C6 /* Default@2x.png */,
+				CEEAB4C717E92999001DA8AC /* Default-568h@2x.png */,
+				CEEAB4C317E9285D001DA8AC /* Default-Portrait~ipad.png */,
+				CEEAB4C117E92807001DA8AC /* Default-Portrait@2x~ipad.png */,
 				CEEAB4D117E92CD3001DA8AC /* Business Logic Classes */,
 				CE89F94717EA1B6C00C6DF0E /* Data Model Classes */,
 				CEF34A2017F7AD630076E5AA /* fonts */,
@@ -958,6 +969,7 @@
 				CE5EA1E3180891F7000F6E30 /* robot7@2x.png */,
 				CE5EA1E518089C5B000F6E30 /* robot8@2x.png */,
 				CE2EB104180BB62A0016E437 /* robotResurrection@2x.png */,
+				CE69C4D0181E4A8700742F36 /* RobotzAvailableNowGraphicBlue.png */,
 				CE5EA1CB18061056000F6E30 /* RobotzComingSoonGraphic.png */,
 				CEE42A2117F28E8200A64847 /* selectBoostsBackground@2x.png */,
 				CEBAE47017EBC0B800A24438 /* settingsButton@2x.png */,
@@ -1093,7 +1105,6 @@
 				CE2EB1471810B53D0016E437 /* tutorialBoosts@2x.png in Resources */,
 				CEBAE48C17ED573000A24438 /* gamePiece1@2x.png in Resources */,
 				CE2EB16A181326480016E437 /* greyStar@2x.png in Resources */,
-				CE9EA3B117FD0062000201C8 /* icon120x120.png in Resources */,
 				CE2EB1381810758A0016E437 /* checkButton@2x.png in Resources */,
 				CE89F93D17E95A4500C6DF0E /* playButton@2x.png in Resources */,
 				CE2BB1E21802005B005117A8 /* voiceNice.aif in Resources */,
@@ -1122,12 +1133,12 @@
 				CE660D8F17FE354700A03C59 /* mainMenuMessageFrame@2x.png in Resources */,
 				CE2EB120180DACCA0016E437 /* backButton@2x.png in Resources */,
 				CE660D9317FE5EAE00A03C59 /* charCreationHeader@2x.png in Resources */,
+				CE69C4C5181E3DBF00742F36 /* icon76x76.png in Resources */,
 				CE2EB167181326070016E437 /* avatarThumbnail7@2x.png in Resources */,
 				CE660D9717FE886D00A03C59 /* gameModuleHealthBarCover@2x.png in Resources */,
 				CE2BB1F61803958A005117A8 /* 999Button@2x.png in Resources */,
 				CE92CF9418171637008EF793 /* tutorialUranus@2x.png in Resources */,
 				CEF34A2217F7AD880076E5AA /* HoboStd.otf in Resources */,
-				CE2BB1D9180144A9005117A8 /* icon76x76.png in Resources */,
 				CEEAB45917E90CEE001DA8AC /* InfoPlist.strings in Resources */,
 				CE2EB13C1810879F0016E437 /* tutorial4@2x.png in Resources */,
 				CE89F95417EA2F0700C6DF0E /* charClassDetailsBG@2x.png in Resources */,
@@ -1162,6 +1173,7 @@
 				CE2EB112180C67F30016E437 /* continueButton@2x.png in Resources */,
 				CE92CFA118185008008EF793 /* numResurrectionsIcon@2x.png in Resources */,
 				CE92CF6C1814CC0B008EF793 /* levelMapScreeniPhone5@2x.png in Resources */,
+				CE69C4CD181E40D200742F36 /* icon80x80.png in Resources */,
 				CE2EB128180E20660016E437 /* emptyStar@2x.png in Resources */,
 				CE08D1F218147AF200BF06D1 /* howToPlay3@2x.png in Resources */,
 				CE2EB161181326070016E437 /* avatarThumbnail1@2x.png in Resources */,
@@ -1186,6 +1198,8 @@
 				CE5EA1DF1807C8FE000F6E30 /* TapjoyResources.bundle in Resources */,
 				CEEAB46B17E90CEF001DA8AC /* ViewController_iPhone.xib in Resources */,
 				CE2EB142181090EB0016E437 /* tutorial7@2x.png in Resources */,
+				CE69C4C7181E3DBF00742F36 /* icon120x120.png in Resources */,
+				CE69C4CF181E413B00742F36 /* icon29x29.png in Resources */,
 				CE92CF6B1814CC0B008EF793 /* levelMapScreeniPhone4@2x.png in Resources */,
 				CE285B9517EE4776007D2101 /* gamePiece4@2x.png in Resources */,
 				CE2BB1FC1803E0C7005117A8 /* facebookButton@2x.png in Resources */,
@@ -1194,7 +1208,6 @@
 				CE2EB0FC180B714E0016E437 /* greaterRepairBoostSmall@2x.png in Resources */,
 				CEF34A3117F9F4330076E5AA /* restoreHealthBoostSmall@2x.png in Resources */,
 				CEE42A2917F295AA00A64847 /* playButtonBoosts@2x.png in Resources */,
-				CE2BB1DB180144A9005117A8 /* icon152x152.png in Resources */,
 				CE2EB164181326070016E437 /* avatarThumbnail4@2x.png in Resources */,
 				CE660D8D17FE34F100A03C59 /* mainMenuHeader@2x.png in Resources */,
 				CE2EB0FD180B714E0016E437 /* resurrectionBoostSmall@2x.png in Resources */,
@@ -1207,6 +1220,7 @@
 				CEEAB46E17E90CEF001DA8AC /* ViewController_iPad.xib in Resources */,
 				CE2EB12D180F5EB70016E437 /* tutorial2@2x.png in Resources */,
 				CE2EB14C1810ED840016E437 /* tutorialEarth@2x.png in Resources */,
+				CE69C4C6181E3DBF00742F36 /* icon114x114.png in Resources */,
 				CE2BB1E618023FD6005117A8 /* noMoreMatchesShuffling@2x.png in Resources */,
 				CE2EB162181326070016E437 /* avatarThumbnail2@2x.png in Resources */,
 				CE92CFA318185ADE008EF793 /* gameViewTutorialOverlay@2x.png in Resources */,
@@ -1216,6 +1230,7 @@
 				CE92CF85181624F9008EF793 /* levelMapPluto@2x.png in Resources */,
 				CE2EB12E180F5EB70016E437 /* tutorial3@2x.png in Resources */,
 				CE92CF83181624F9008EF793 /* levelMapMercury@2x.png in Resources */,
+				CE69C4C3181E3DBF00742F36 /* icon57x57.png in Resources */,
 				CE2EB101180B826B0016E437 /* greaterAttackBoostLarge@2x.png in Resources */,
 				CEBAE47B17EBC0B800A24438 /* headToHeadButton@2x.png in Resources */,
 				CEBAE47F17EBC0B800A24438 /* background1@2x.png in Resources */,
@@ -1224,21 +1239,21 @@
 				CEBAE47D17EBC0B800A24438 /* customizeButton@2x.png in Resources */,
 				CE5EA1E4180891F7000F6E30 /* robot7@2x.png in Resources */,
 				CE92CF8E1817135B008EF793 /* tutorialMars@2x.png in Resources */,
-				CEEAB4BC17E91F64001DA8AC /* icon57x57.png in Resources */,
 				CE89F93817E93CAB00C6DF0E /* Default.png in Resources */,
 				CE660D8017FE1B4400A03C59 /* startScreeniPhoneBottom@2x.png in Resources */,
-				CEEAB4BE17E91FA9001DA8AC /* icon114x114.png in Resources */,
 				CE92CF721815A459008EF793 /* goldStarLeft@2x.png in Resources */,
 				CEEAB4C217E92807001DA8AC /* Default-Portrait@2x~ipad.png in Resources */,
 				CE92CF98181717BB008EF793 /* tutorialPluto@2x.png in Resources */,
 				CE2EB14A1810B53D0016E437 /* tutorialVenus@2x.png in Resources */,
 				CE2BB1C81800B51F005117A8 /* settingsArrow@2x.png in Resources */,
 				CE660D9617FE886D00A03C59 /* gameModuleHeader@2x.png in Resources */,
+				CE69C4C8181E3DBF00742F36 /* icon144x144.png in Resources */,
 				CE92CF9F1817603D008EF793 /* levelUpText@2x.png in Resources */,
 				CEE42A3D17F3DA5F00A64847 /* playerHpBarBG@2x.png in Resources */,
 				CE5EA1D218076D3B000F6E30 /* robot4@2x.png in Resources */,
 				CE2EB166181326070016E437 /* avatarThumbnail6@2x.png in Resources */,
 				CE660DB417FF84A700A03C59 /* gameScreenBackground@2x.png in Resources */,
+				CE69C4C4181E3DBF00742F36 /* icon72x72.png in Resources */,
 				CEE42A3317F395A900A64847 /* robot2@2x.png in Resources */,
 				CE2BB1D3180115CF005117A8 /* awesomeTextPopup@2x.png in Resources */,
 				CE2BB1CA1800B51F005117A8 /* settingsPageBackground@2x.png in Resources */,
@@ -1246,15 +1261,14 @@
 				CEEAB4C417E9285D001DA8AC /* Default-Portrait~ipad.png in Resources */,
 				CE2EB10B180BC6930016E437 /* resurrection.wav in Resources */,
 				CE2EB168181326070016E437 /* avatarThumbnail8@2x.png in Resources */,
+				CE69C4CC181E40D200742F36 /* icon58x58.png in Resources */,
 				CE89F95217EA28CB00C6DF0E /* char3@2x.png in Resources */,
-				CE9EA3B317FD009A000201C8 /* icon72x72.png in Resources */,
 				CEBAE49017ED630A00A24438 /* gamePiece3@2x.png in Resources */,
 				CE5EA1E81808A99D000F6E30 /* creditsPageBG@2x.png in Resources */,
 				CE92CF9218171574008EF793 /* tutorialSaturn@2x.png in Resources */,
 				CE5EA1CA1805DB3C000F6E30 /* tellYourFriendsText@2x.png in Resources */,
 				CE2EB13E1810883F0016E437 /* tutorial5@2x.png in Resources */,
 				CE660D7A17FD229B00A03C59 /* boostHudHealth@2x.png in Resources */,
-				CE2BB1DA180144A9005117A8 /* icon144x144.png in Resources */,
 				CE2EB163181326070016E437 /* avatarThumbnail3@2x.png in Resources */,
 				CEF34A2F17F9F4330076E5AA /* greaterDefenseBoostSmall@2x.png in Resources */,
 				CEE42A4417F3E9EB00A64847 /* opponentHpBar@2x.png in Resources */,
@@ -1276,6 +1290,8 @@
 				CE92CF96181716C6008EF793 /* tutorialNeptune@2x.png in Resources */,
 				CEBAE47C17EBC0B800A24438 /* playButtonMain@2x.png in Resources */,
 				CE92CFAE181880FF008EF793 /* loadingGraphicLarge@2x.png in Resources */,
+				CE69C4D1181E4A8700742F36 /* RobotzAvailableNowGraphicBlue.png in Resources */,
+				CE69C4C9181E3DBF00742F36 /* icon152x152.png in Resources */,
 				CE660DAB17FF4FAE00A03C59 /* BattleWon.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1414,7 +1430,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "robotz/robotz-Prefix.pch";
 				INFOPLIST_FILE = "robotz/robotz-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = robotz;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1497,7 +1513,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "robotz/robotz-Prefix.pch";
 				INFOPLIST_FILE = "robotz/robotz-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = robotz;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1520,7 +1536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "robotz/robotz-Prefix.pch";
 				INFOPLIST_FILE = "robotz/robotz-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = robotz;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

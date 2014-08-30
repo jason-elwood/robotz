@@ -64,7 +64,7 @@
     animationComplete = NO;
     expAwarded = od.expAwarded;
     coinsAwarded = od.coinsAwarded;
-    NSLog(@"Initializing BattleManager State... coinsAwarded : %d, opponentIndex : %d, bgImage : %@", coinsAwarded, opponentIndex, od.bgImage);
+    //NSLog(@"Initializing BattleManager State... coinsAwarded : %d, opponentIndex : %d, bgImage : %@", coinsAwarded, opponentIndex, od.bgImage);
     // This is where we set up the initial state of the battle.
 }
 
@@ -78,7 +78,7 @@
 
 - (void)provideBoostsHudUI
 {
-    NSLog(@"provideBoostsHudUI. boostsArray : %@", boostsArray);
+    //NSLog(@"provideBoostsHudUI. boostsArray : %@", boostsArray);
     for (int i = 0; i < [boostsArray count]; i++) {
         [self createBoostButton:[[boostsArray objectAtIndex:i] intValue]];
     }
@@ -88,7 +88,7 @@
 
 - (void)setBoosts:(NSMutableArray *)boosts
 {
-    NSLog(@"setBoosts : %@", boosts);
+    //NSLog(@"setBoosts : %@", boosts);
     boostsArray = [[NSMutableArray alloc] init];
     for (int i = 0; i < [boosts count]; i++) {
         if ([[boosts objectAtIndex:i] isEqualToString:@"Restore Health"]) {
@@ -111,7 +111,7 @@
 
 - (void)createBoostButton:(int)boostIndex
 {
-    NSLog(@"boostIndex : %d", boostIndex);
+    //NSLog(@"boostIndex : %d", boostIndex);
     if (boostIndex == 0) {
         [delegateHud setBoost:0];
     } else if (boostIndex == 1) {
@@ -127,13 +127,13 @@
 
 - (void)restoreHealth
 {
-    NSLog(@"Restoring Health to 50 percent of original.");
+    //NSLog(@"Restoring Health to 50 percent of original.");
     PlayerData *pd = [PlayerData sharedManager];
     int currentHP = [pd getCurrentHitPoints];
     if (currentHP < 0) {
         currentHP = 0;
     }
-    NSLog(@"playerData maxhitpoints : %d", [[SaveLoadDataDevice sharedManager] getPlayersMaxHitPoints]);
+    //NSLog(@"playerData maxhitpoints : %d", [[SaveLoadDataDevice sharedManager] getPlayersMaxHitPoints]);
     int newHP = [[SaveLoadDataDevice sharedManager] getPlayersMaxHitPoints] / 2 + currentHP;
     //int newHP = [[[pd getRobotData] objectForKey:constants.MAXHITPOINTS] intValue] / 2 + currentHP;
     if (newHP > [[SaveLoadDataDevice sharedManager] getPlayersMaxHitPoints]) {
@@ -147,35 +147,35 @@
 - (void)increaseDefense
 {
     NSMutableDictionary *pd = [[PlayerData sharedManager] getRobotData];
-    NSLog(@"Increasing defense from : %d.", [[pd objectForKey:constants.DEFENSE] intValue]);
+    //NSLog(@"Increasing defense from : %d.", [[pd objectForKey:constants.DEFENSE] intValue]);
     [pd setObject:[NSNumber numberWithInt:[[pd objectForKey:constants.DEFENSE] intValue] * 1.1] forKey:constants.DEFENSE];
-    NSLog(@"Increasing defense to : %d.", [[pd objectForKey:constants.DEFENSE] intValue]);
+    //NSLog(@"Increasing defense to : %d.", [[pd objectForKey:constants.DEFENSE] intValue]);
 }
 
 - (void)increaseAgility
 {
     NSMutableDictionary *pd = [[PlayerData sharedManager] getRobotData];
-    NSLog(@"Increasing agility from : %d.", [[pd objectForKey:constants.AGILITY] intValue]);
+    //NSLog(@"Increasing agility from : %d.", [[pd objectForKey:constants.AGILITY] intValue]);
     [pd setObject:[NSNumber numberWithInt:[[pd objectForKey:constants.AGILITY] intValue] * 1.1] forKey:constants.AGILITY];
-    NSLog(@"Increasing agility to : %d.", [[pd objectForKey:constants.AGILITY] intValue]);
+    //NSLog(@"Increasing agility to : %d.", [[pd objectForKey:constants.AGILITY] intValue]);
 }
 
 - (void)increaseAttack
 {
     NSMutableDictionary *pd = [[PlayerData sharedManager] getRobotData];
-    NSLog(@"Increasing damage from : %d.", [[pd objectForKey:constants.DAMAGE] intValue]);
+    //NSLog(@"Increasing damage from : %d.", [[pd objectForKey:constants.DAMAGE] intValue]);
     [pd setObject:[NSNumber numberWithInt:[[pd objectForKey:constants.DAMAGE] intValue] * 1.1] forKey:constants.DAMAGE];
-    NSLog(@"Increasing damage to : %d.", [[pd objectForKey:constants.DAMAGE] intValue]);
+    //NSLog(@"Increasing damage to : %d.", [[pd objectForKey:constants.DAMAGE] intValue]);
 }
 
 - (void)resurrect
 {
-    NSLog(@"Resurrecting player");
+    //NSLog(@"Resurrecting player");
 }
 
 - (void)enableResurrection
 {
-    NSLog(@"Ability to resurrect enabled.");
+    //NSLog(@"Ability to resurrect enabled.");
     playerHasResurrection = YES;
 }
 
@@ -201,7 +201,7 @@
 
 - (void)updatePlayersMoveWithDamage:(int)damage
 {
-    NSLog(@"players damage = %d", damage);
+    //NSLog(@"players damage = %d", damage);
     animationComplete = NO;
     
     NSDate *date = [NSDate dateWithTimeIntervalSinceNow: 0.5];
@@ -215,7 +215,7 @@
 
 - (void)updateOpponentMoveWithDamage:(int)damage
 {
-    NSLog(@"opponents damage = %d", damage);
+    //NSLog(@"opponents damage = %d", damage);
     PlayerData *pd = [PlayerData sharedManager];
     [pd setCurrentHitPoints:[pd getCurrentHitPoints] - damage];
     [delegatePuzzle opponentAttack:damage];
@@ -244,7 +244,7 @@
         return;
     }
     
-    NSLog(@"maxhitpoints : %d. currenthitpoints : %d", [[SaveLoadDataDevice sharedManager] getPlayersMaxHitPoints], [pd getCurrentHitPoints]);
+    //NSLog(@"maxhitpoints : %d. currenthitpoints : %d", [[SaveLoadDataDevice sharedManager] getPlayersMaxHitPoints], [pd getCurrentHitPoints]);
     [delegateHud updatePlayerTotalHp:[[SaveLoadDataDevice sharedManager] getPlayersMaxHitPoints] currentHp:[pd getCurrentHitPoints]];
     
     [animationTimer invalidate];
@@ -305,7 +305,7 @@
 
 - (void)levelUpWithLevel:(int)level andRemainingXp:(int)remainingXp
 {
-    NSLog(@"Battle Manager handling the level up.");
+    //NSLog(@"Battle Manager handling the level up.");
     SaveLoadDataDevice *sldd = [SaveLoadDataDevice sharedManager];
     //[sldd playerWinsAgainstOpponentIndex:opponentIndex];
     [sldd levelUpWithRemainingXp:remainingXp charClassData:[characterClassData getCharClassData:level] andLevelData:[charLevelData getLevelDataForLevel:level andRobotType:[sldd getCharacterType]]];
@@ -314,10 +314,10 @@
 - (void)battleEndedPlayerLost
 {
     if (playerHasResurrection) {
-        NSLog(@"Resurrect player. playerHasResurrection : %d", playerHasResurrection);
+        //NSLog(@"Resurrect player. playerHasResurrection : %d", playerHasResurrection);
         [self restoreHealth];
         playerHasResurrection = NO;
-        NSLog(@"Resurrect player. playerHasResurrection : %d", playerHasResurrection);
+        //NSLog(@"Resurrect player. playerHasResurrection : %d", playerHasResurrection);
         // Show a dope resurrection animation...
         [delegateHud resurrectionUsed];
         [self lockPuzzleControl];
@@ -337,7 +337,7 @@
 
 - (void)battleEndedPlayerWon
 {
-    NSLog(@"battleEndedPlayerWon!");
+    //NSLog(@"battleEndedPlayerWon!");
     
     // Add matches results to tempDict and send them to sldd.
     NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];

@@ -12,7 +12,7 @@
 
 - (void)initializeCharClassData
 {
-    NSLog(@"Initializing Class Data");
+    //NSLog(@"Initializing Class Data");
 }
 
 - (NSArray *)getImages
@@ -27,7 +27,7 @@
 - (NSMutableDictionary *)getCharClassData:(int)classIndex
 {
     
-    NSLog(@"classIndex = %d", classIndex);
+    //NSLog(@"classIndex = %d", classIndex);
     constants = [[Constants alloc] init];
     
     if (classIndex == 0) {
@@ -39,7 +39,7 @@
         damage = [NSNumber numberWithInt:15];
         defense = [NSNumber numberWithInt:10];
         repair = [NSNumber numberWithInt:7];
-        agility = [NSNumber numberWithInt:5];
+        agility = [NSNumber numberWithInt:8];
         hitPoints = [NSNumber numberWithInt:200];
         maxHitPoints = [NSNumber numberWithInt:200];
         
@@ -49,9 +49,9 @@
         classDesc = @"Defender's have superior defense and average agility but have little attack and repair.";
         robotImageName = @"robot2.png";
         backgroundImageName = @"background1.png";
-        damage = [NSNumber numberWithInt:7];
+        damage = [NSNumber numberWithInt:8];
         defense = [NSNumber numberWithInt:15];
-        repair = [NSNumber numberWithInt:5];
+        repair = [NSNumber numberWithInt:7];
         agility = [NSNumber numberWithInt:10];
         hitPoints = [NSNumber numberWithInt:200];
         maxHitPoints = [NSNumber numberWithInt:200];
@@ -59,11 +59,11 @@
         charClassType = [NSNumber numberWithInteger:3];
         className = @"Ninja";
         classDesc = @"Ninja's have superior agility and average repair but have little attack and defense.";
-        robotImageName = @"robot4.png";
+        robotImageName = @"robot3.png";
         backgroundImageName = @"background1.png";
-        damage = [NSNumber numberWithInt:7];
-        defense = [NSNumber numberWithInt:5];
-        repair = [NSNumber numberWithInt:10];
+        damage = [NSNumber numberWithInt:10];
+        defense = [NSNumber numberWithInt:8];
+        repair = [NSNumber numberWithInt:7];
         agility = [NSNumber numberWithInt:15];
         hitPoints = [NSNumber numberWithInt:200];
         maxHitPoints = [NSNumber numberWithInt:200];
@@ -71,7 +71,7 @@
         charClassType = [NSNumber numberWithInteger:2];
         className = @"Mechanic";
         classDesc = @"Mechanic's have superior repair abilities and average attack but have little defense and agility.";
-        robotImageName = @"robot3.png";
+        robotImageName = @"robot4.png";
         backgroundImageName = @"background1.png";
         damage = [NSNumber numberWithInt:10];
         defense = [NSNumber numberWithInt:7];

@@ -28,7 +28,7 @@
         numRobotsCategory6 = [NSNumber numberWithInt:20];
         numRobotsCategory7 = [NSNumber numberWithInt:40];
         numRobotsCategory8 = [NSNumber numberWithInt:64];
-        numRobotsCategory9 = [NSNumber numberWithInt:64];
+        numRobotsCategory9 = [NSNumber numberWithInt:63];
         [self buildDataDictionary];
     }
     return self;

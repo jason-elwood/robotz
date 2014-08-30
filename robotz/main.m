@@ -40,7 +40,7 @@ void __iOS7B5CleanConsoleOutput()
 int main(int argc, char *argv[])
 
 {
-#warning REMOVE BEFORE FLIGHT - disables AssertMacros flood in console in XCode beta 5
+//#warning REMOVE BEFORE FLIGHT - disables AssertMacros flood in console in XCode beta 5
     __iOS7B5CleanConsoleOutput();
     
     @autoreleasepool {

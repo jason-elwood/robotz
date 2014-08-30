@@ -23,7 +23,7 @@
 
 - (void)initializeData:(int)levelIndex andRobotType:(int)robotType
 {
-    NSLog(@"initializing data for robot type : %d of level : %d.", robotType, levelIndex);
+    //NSLog(@"initializing data for robot type : %d of level : %d.", robotType, levelIndex);
     if (levelIndex == 1) {
         expToLevel = 100;
         playersMaxHitPoints = 100;
@@ -35,25 +35,25 @@
         playersMaxHitPoints = 200;
     } else if (levelIndex == 4) {
         expToLevel = 800;
-        playersMaxHitPoints = 250;
+        playersMaxHitPoints = 300;
     } else if (levelIndex == 5) {
         expToLevel = 1600;
-        playersMaxHitPoints = 300;
+        playersMaxHitPoints = 350;
     } else if (levelIndex == 6) {
         expToLevel = 3200;
-        playersMaxHitPoints = 350;
+        playersMaxHitPoints = 400;
     } else if (levelIndex == 7) {
         expToLevel = 6400;
-        playersMaxHitPoints = 400;
+        playersMaxHitPoints = 450;
     } else if (levelIndex == 8) {
         expToLevel = 12800;
-        playersMaxHitPoints = 450;
+        playersMaxHitPoints = 550;
     } else if (levelIndex == 9) {
         expToLevel = 25600;
-        playersMaxHitPoints = 500;
+        playersMaxHitPoints = 600;
     } else if (levelIndex == 10) {
         expToLevel = 100000;
-        playersMaxHitPoints = 550;
+        playersMaxHitPoints = 700;
     }
     
     [delegate setPlayersMaxHitPoints:playersMaxHitPoints];
@@ -64,12 +64,12 @@
         agilityBonus = 1;
         repairBonus = 2;
     } else if (robotType == 1) {
-        damageBonus = 2;
+        damageBonus = 3;
         defenseBonus = 5;
         agilityBonus = 4;
         repairBonus = 1;
     }else if (robotType == 2) {
-        damageBonus = 2;
+        damageBonus = 3;
         defenseBonus = 1;
         agilityBonus = 5;
         repairBonus = 4;

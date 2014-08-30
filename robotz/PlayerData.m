@@ -51,7 +51,7 @@
 - (void)setCurrentHitPoints:(int)hp
 {
     hitPoints = hp;
-    NSLog(@"Setting the players hitpoints to : %d", hp);
+    //NSLog(@"Setting the players hitpoints to : %d", hp);
 }
 
 - (int)getCurrentHitPoints

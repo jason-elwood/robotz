@@ -112,7 +112,7 @@
 
 - (void)updateCharacterSelectorDetails:(int)charIndex
 {
-    NSLog(@"Update character stats.");
+    //NSLog(@"Update character stats.");
     characterIndex = charIndex;
     charDataDictionary = [[NSDictionary alloc] initWithDictionary:[charClassData getCharClassData:charIndex]];
     [classNameLabel setText:[charDataDictionary objectForKey:constants.CLASSNAME]];
@@ -142,7 +142,7 @@
     {
         SaveLoadDataDevice *sldd = [SaveLoadDataDevice sharedManager];
         NSMutableDictionary *levelDataDict = [charLevelData getLevelDataForLevel:1 andRobotType:[[charDataDictionary objectForKey:constants.CHARCLASSTYPE]intValue]];
-        NSLog(@"Yes was selected. levelDataDict : %@", levelDataDict);
+        //NSLog(@"Yes was selected. levelDataDict : %@", levelDataDict);
         [sldd setCharacterType:[[charDataDictionary objectForKey:constants.CHARCLASSTYPE]intValue]];
         [sldd setAgility:[[charDataDictionary objectForKey:constants.AGILITY]intValue]];
         [sldd setBackgroundImage:[charDataDictionary objectForKey:constants.BACKGROUNDIMAGE]];
@@ -165,7 +165,7 @@
     }
     else if([title isEqualToString:@"No"])
     {
-        NSLog(@"No was selected.");
+        //NSLog(@"No was selected.");
     }
 }
 

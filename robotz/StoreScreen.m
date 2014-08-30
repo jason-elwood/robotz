@@ -71,7 +71,7 @@
         
         NSMutableDictionary *savedDateDict = [[SaveLoadDataDevice sharedManager] getSavedDate];
         
-        NSLog(@"savedDate : %@", savedDateDict);
+        //NSLog(@"savedDate : %@", savedDateDict);
             
         NSDate *today = [NSDate date];
             
@@ -83,17 +83,18 @@
         NSString *currMonth = [formatter stringFromDate:today];
         [formatter setDateFormat:@"d"];
         NSString *currDay = [formatter stringFromDate:today];
-        if ([currYear intValue] >= [[savedDateDict objectForKey:constants.YEAR] intValue]) {
-            NSLog(@"year");
-            if ([currMonth intValue] >= [[savedDateDict objectForKey:constants.MONTH] intValue]) {
-                NSLog(@"month");
-                if ([currDay intValue] > [[savedDateDict objectForKey:constants.DAY] intValue]) {
-                    NSLog(@"day");
-                    [self displayFacebookButton];
-                } else {
-                    [self displayFacebookCountdownTimer];
-                }
-            }
+        
+        NSLog(@"currYear : %d.  Saved Year : %d", [currYear intValue], [[savedDateDict objectForKey:constants.YEAR] intValue]);
+        NSLog(@"currMonth : %d.  Saved Month : %d", [currMonth intValue], [[savedDateDict objectForKey:constants.MONTH] intValue]);
+        NSLog(@"currDay : %d.  Saved Day : %d", [currDay intValue], [[savedDateDict objectForKey:constants.DAY] intValue]);
+        
+        if ([currYear intValue] > [[savedDateDict objectForKey:constants.YEAR] intValue] ||
+            [currMonth intValue] > [[savedDateDict objectForKey:constants.MONTH] intValue] ||
+            [currDay intValue] > [[savedDateDict objectForKey:constants.DAY] intValue])
+        {
+            [self displayFacebookButton];
+        } else {
+            [self displayFacebookCountdownTimer];
         }
     } else {
         [self displayFacebookButton];
@@ -113,7 +114,7 @@
     
     totalCoinsLabel.text = [NSString stringWithFormat:@"%@", formatted];
     
-    NSLog(@"Update totalCoins label");
+    //NSLog(@"Update totalCoins label");
 }
 
 - (void)productsLoaded
@@ -153,14 +154,14 @@
 
 - (void)displayFacebookCountdownTimer
 {
-    UITextView *waitMessage = [[UITextView alloc] initWithFrame:CGRectMake(50, 355, 220, 80)];
+    UITextView *waitMessage = [[UITextView alloc] initWithFrame:CGRectMake(50, 352, 220, 80)];
     waitMessage.editable = NO;
     [waitMessage setFont:[UIFont boldSystemFontOfSize:18]];
     waitMessage.textColor = [UIColor whiteColor];
     waitMessage.backgroundColor = [UIColor clearColor];
     waitMessage.text = @"Free coins are available for sharing to Facebook once per day.";
     [self addSubview:waitMessage];
-    NSLog(@"Display wait message.");
+    //NSLog(@"Display wait message.");
     
     timerText = [[UILabel alloc] initWithFrame:CGRectMake(110, 325, 125, 40)];
     timerText.textColor = [UIColor whiteColor];
@@ -287,7 +288,7 @@
     
     [self displayFacebookCountdownTimer];
     
-    NSLog(@"currYear : %d, currMonth : %d, currDay : %d", [currYear intValue], [currMonth intValue], [currDay intValue]);
+    //NSLog(@"currYear : %d, currMonth : %d, currDay : %d", [currYear intValue], [currMonth intValue], [currDay intValue]);
 }
 
 - (void)buyNineNinetyNine:(id)sender
@@ -311,7 +312,7 @@
     oneNinetyNineButton.enabled = NO;
     ninetyNineButton.enabled = NO;
     
-    NSLog(@"Attempting to buy $9.99 item.");
+    //NSLog(@"Attempting to buy $9.99 item.");
 }
 
 - (void)buyFourNinetyNine:(id)sender
@@ -335,7 +336,7 @@
     oneNinetyNineButton.enabled = NO;
     ninetyNineButton.enabled = NO;
     
-    NSLog(@"Attempting to buy $4.99 item.");
+    //NSLog(@"Attempting to buy $4.99 item.");
 }
 
 - (void)buyOneNinetyNine:(id)sender
@@ -359,7 +360,7 @@
     oneNinetyNineButton.enabled = NO;
     ninetyNineButton.enabled = NO;
     
-    NSLog(@"Attempting to buy $1.99 item.");
+    //NSLog(@"Attempting to buy $1.99 item.");
 }
 
 - (void)buyNinetyNine:(id)sender
@@ -383,7 +384,7 @@
     oneNinetyNineButton.enabled = NO;
     ninetyNineButton.enabled = NO;
     
-    NSLog(@"Attempting to $0.99 item.");
+    //NSLog(@"Attempting to $0.99 item.");
 }
 
 - (void)transactionCompleteTransType:(int)tranType
@@ -405,7 +406,20 @@
 
 - (void)transactionFailed
 {
-    NSLog(@"transaction failed!");
+    [paymentProgressView removeFromSuperview];
+    paymentProgressView = nil;
+    [paymentProgressLabel removeFromSuperview];
+    paymentProgressLabel = nil;
+    
+    ninetyNineButton.alpha = 1.0;
+    ninetyNineButton.enabled = YES;
+    oneNinetyNineButton.alpha = 1.0;
+    oneNinetyNineButton.enabled = YES;
+    fourNinetyNineButton.alpha = 1.0;
+    fourNinetyNineButton.enabled = YES;
+    nineNinetyNineButton.alpha = 1.0;
+    nineNinetyNineButton.enabled = YES;
+    //NSLog(@"transaction failed!");
 }
 
 - (void)closeStoreScreen:(id)sender

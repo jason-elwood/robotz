@@ -100,7 +100,7 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"alertView buttonIndex : %d", buttonIndex);
+    //NSLog(@"alertView buttonIndex : %d", buttonIndex);
     if (buttonIndex == 0) {
         [delegate quitMatch];
     } else {

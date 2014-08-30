@@ -83,7 +83,7 @@
     creditsButton.layer.cornerRadius = 5;
     creditsButton.layer.borderWidth = 2;
     creditsButton.layer.borderColor = [UIColor colorWithRed:28.0f/255.0f green:130.0f/255.0f blue:255.0f/255.0f alpha:1.0f].CGColor;
-    creditsButton.frame = CGRectMake(185, 183, 70, 30);
+    creditsButton.frame = CGRectMake(185, 184, 70, 30);
     [creditsButton setTitle:@"VIEW" forState:UIControlStateNormal];
     [creditsButton addTarget:self action:@selector(showTheCreditsScreen:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:creditsButton];
@@ -119,7 +119,7 @@
     helpButton.layer.cornerRadius = 5;
     helpButton.layer.borderWidth = 2;
     helpButton.layer.borderColor = [UIColor colorWithRed:28.0f/255.0f green:130.0f/255.0f blue:255.0f/255.0f alpha:1.0f].CGColor;
-    helpButton.frame = CGRectMake(185, 280, 70, 30);
+    helpButton.frame = CGRectMake(185, 283, 70, 30);
     [helpButton setTitle:@"VIEW" forState:UIControlStateNormal];
     [helpButton addTarget:self action:@selector(startHelpTutorial:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:helpButton];
@@ -206,7 +206,7 @@
 
 - (void)displayTutorialScreen1:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen1");
+    //NSLog(@"displayTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - tutHeight / 2, tutWidth, tutHeight);
@@ -221,7 +221,7 @@
 
 - (void)closeTutorialScreen1:(id)sender
 {
-    NSLog(@"closeTutorialScreen1");
+    //NSLog(@"closeTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut1ImageView.frame.size.width, tut1ImageView.frame.size.height);
@@ -238,7 +238,7 @@
 
 - (void)displayTutorialScreen2:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen2");
+    //NSLog(@"displayTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - tutHeight / 2, deviceTypes.deviceWidth, deviceTypes.deviceHeight);
@@ -252,7 +252,7 @@
 
 - (void)closeTutorialScreen2:(id)sender
 {
-    NSLog(@"closeTutorialScreen2");
+    //NSLog(@"closeTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut2ImageView.frame.size.width, tut2ImageView.frame.size.height);
@@ -269,7 +269,7 @@
 
 - (void)displayTutorialScreen3:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen3");
+    //NSLog(@"displayTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut3Container.frame = CGRectMake(0, 0, deviceTypes.deviceWidth, deviceTypes.deviceHeight);
@@ -283,7 +283,7 @@
 
 - (void)closeTutorialScreen3:(id)sender
 {
-    NSLog(@"closeTutorialScreen3");
+    //NSLog(@"closeTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut3Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut3ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut3ImageView.frame.size.width, tut3ImageView.frame.size.height);

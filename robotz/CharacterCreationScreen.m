@@ -107,7 +107,7 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSLog(@"return sent to textfield.");
+    //NSLog(@"return sent to textfield.");
     [self robotNameConfirmed:self];
     return YES;
 }
@@ -197,7 +197,7 @@
 
 - (void)displayTutorialScreen1:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen1");
+    //NSLog(@"displayTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:0]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:0]).size.width, ((UIImage*)[tutorialImages objectAtIndex:0]).size.height + 50);
@@ -212,7 +212,7 @@
 
 - (void)closeTutorialScreen1:(id)sender
 {
-    NSLog(@"closeTutorialScreen1");
+    //NSLog(@"closeTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut1ImageView.frame.size.width, tut1ImageView.frame.size.height);
@@ -229,7 +229,7 @@
 
 - (void)displayTutorialScreen2:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen2");
+    //NSLog(@"displayTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:1]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:1]).size.width, ((UIImage*)[tutorialImages objectAtIndex:1]).size.height + 50);
@@ -243,7 +243,7 @@
 
 - (void)closeTutorialScreen2:(id)sender
 {
-    NSLog(@"closeTutorialScreen2");
+    //NSLog(@"closeTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut2ImageView.frame.size.width, tut2ImageView.frame.size.height);
@@ -260,7 +260,7 @@
 
 - (void)displayTutorialScreen3:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen3");
+    //NSLog(@"displayTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut3Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut3ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:1]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:2]).size.width, ((UIImage*)[tutorialImages objectAtIndex:2]).size.height + 50);
@@ -276,7 +276,7 @@
 
 - (void)closeTutorialScreen3:(id)sender
 {
-    NSLog(@"closeTutorialScreen3");
+    //NSLog(@"closeTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut3Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut3ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut3ImageView.frame.size.width, tut3ImageView.frame.size.height);

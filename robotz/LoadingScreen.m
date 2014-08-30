@@ -24,7 +24,7 @@
 - (void)drawLoadingScreen
 {
     deviceTypes = [[DeviceTypes alloc] init];
-    NSLog(@"Device Type: %@", [deviceTypes getModel]);
+    //NSLog(@"Device Type: %@", [deviceTypes getModel]);
     
     if (deviceTypes.deviceHeight > 480) {
         splashImage = [UIImage imageNamed:@"loadingGraphicLarge.png"];
@@ -34,7 +34,7 @@
     
     UIImageView *splashImageView = [[UIImageView alloc] initWithImage:splashImage];
     [splashImageView setFrame:CGRectMake(0, 0, deviceTypes.deviceWidth, deviceTypes.deviceHeight)];
-    NSLog(@"deviceWidth = %d and deviceHeight = %d", deviceTypes.deviceWidth, deviceTypes.deviceHeight);
+    //NSLog(@"deviceWidth = %d and deviceHeight = %d", deviceTypes.deviceWidth, deviceTypes.deviceHeight);
     
     [self addSubview:splashImageView];
     

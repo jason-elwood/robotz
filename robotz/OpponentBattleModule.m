@@ -27,7 +27,7 @@
 
 - (void)initializeUIWithBgImage:(NSString *)bg andRobotImage:(NSString *)robot
 {
-    NSLog(@"initializeUIWithBgImage:%@ andRobotImage:%@", bg, robot);
+    //NSLog(@"initializeUIWithBgImage:%@ andRobotImage:%@", bg, robot);
     UIImage *bgImage = [UIImage imageNamed:bg];
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:bgImage];
     bgImageView.frame = CGRectMake(0, 0, bgImage.size.width, bgImage.size.height);
@@ -86,7 +86,7 @@
 
 - (void)opponentTakesHit
 {
-    NSLog(@"opponentTakesHit");
+    //NSLog(@"opponentTakesHit");
     [animations shake:robotImageView];
 }
 
@@ -103,7 +103,7 @@
 
 - (void)opponentAttacks
 {
-    NSLog(@"opponentAttacks");
+    //NSLog(@"opponentAttacks");
     UIImage *fireballImage = [UIImage imageNamed:@"fireball2.png"];
     fireballImageView = [[UIImageView alloc] initWithImage:fireballImage];
     fireballImageView.frame = CGRectMake(-10, 65, fireballImage.size.width, fireballImage.size.height);
@@ -150,12 +150,12 @@
 
 - (void)updateScore:(int)score
 {
-    NSLog(@"updateScoreeeeeee");
+    //NSLog(@"updateScoreeeeeee");
 }
 
 - (void)scoreIncrementValue:(int)points
 {
-    NSLog(@"scoreIncrementValue");
+    //NSLog(@"scoreIncrementValue");
 }
 
 - (void)updateOpponentTotalHp:(float)total currentHp:(float)current

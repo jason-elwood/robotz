@@ -38,10 +38,27 @@
     boost2Pos = CGPointMake(280, 90);
     boost3Pos = CGPointMake(280, 50);
     
-    scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 25, deviceTypes.deviceWidth - 10, 20)]; //fix to be dynamic.
+    UILabel *scoreTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 25, deviceTypes.deviceWidth - 10, 25)];
+    scoreTitle.textAlignment = NSTextAlignmentLeft;
+    scoreTitle.textColor = [UIColor whiteColor];
+    scoreTitle.font = [UIFont fontWithName:@"Hobo Std" size:14];
+    scoreTitle.text = @"Score:";
+    [self addSubview:scoreTitle];
+    
+    scoreLabel = [[THLabel alloc] initWithFrame:CGRectMake(10, 45, deviceTypes.deviceWidth - 10, 25)];
     scoreLabel.textAlignment = NSTextAlignmentLeft;
     scoreLabel.textColor = [UIColor whiteColor];
-    scoreLabel.text = @"0";
+    //scoreLabel.strokeColor = [UIColor whiteColor];
+    //scoreLabel.strokeSize = 1;
+    //scoreLabel.strokePosition = THLabelStrokePositionOutside;
+    scoreLabel.font = [UIFont fontWithName:@"Hobo Std" size:22];
+    scoreLabel.text = @"000";
+    [self addSubview:scoreLabel];
+    
+//    scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 25, deviceTypes.deviceWidth - 10, 20)]; //fix to be dynamic.
+//    scoreLabel.textAlignment = NSTextAlignmentLeft;
+//    scoreLabel.textColor = [UIColor whiteColor];
+//    scoreLabel.text = @"0";
     [self addSubview:scoreLabel];
     
     pointsLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 25, deviceTypes.deviceWidth - 10, 20)]; //fix to be dynamic
@@ -121,7 +138,7 @@
 
 - (void)showDamageToPlayer:(int)playerDamage
 {
-    NSLog(@"Show player's damage.");
+    //NSLog(@"Show player's damage.");
     PointBurst *pointBurst = [[PointBurst alloc] init];
     [pointBurst createPointBurstWithPoints:-playerDamage withColor:[UIColor redColor]];
     pointBurst.frame = CGRectMake(deviceTypes.deviceWidth / 2 - 25, 197, 50, 20);
@@ -149,7 +166,7 @@
 
 - (void)menuButtonSelected:(id)sender
 {
-    NSLog(@"Open menu");
+    //NSLog(@"Open menu");
 }
 
 - (void)updateScore:(int)score
@@ -164,7 +181,7 @@
 
 - (void)updatePlayerTotalHp:(float)total currentHp:(float)current
 {
-    NSLog(@"updatePlayerTotalHp:%f currentHp:%f.  opponentHpBar.width = %f", total, current, (int)opponentHpBar100PercentWidth * (current / total));
+    //NSLog(@"updatePlayerTotalHp:%f currentHp:%f.  opponentHpBar.width = %f", total, current, (int)opponentHpBar100PercentWidth * (current / total));
     if (current / total <= 0.00) {
         playerHpBar.frame = CGRectMake(playerHpBar.frame.origin.x, playerHpBar.frame.origin.y, 0, playerHpBar.frame.size.height);
         playersCurrentMaxHealthLabel.text = [NSString stringWithFormat:@"%d/%d", 0, (int)total];
@@ -177,7 +194,7 @@
 
 - (void)updateOpponentTotalHp:(float)total currentHp:(float)current
 {
-    NSLog(@"updateOpponentTotalHp:%f currentHp:%f.  opponentHpBar.width = %f", total, current, (int)opponentHpBar100PercentWidth * (current / total));
+    //NSLog(@"updateOpponentTotalHp:%f currentHp:%f.  opponentHpBar.width = %f", total, current, (int)opponentHpBar100PercentWidth * (current / total));
     if (current / total <= 0.00) {
         opponentHpBar.frame = CGRectMake(opponentHpBar.frame.origin.x, opponentHpBar.frame.origin.y, 0, opponentHpBar.frame.size.height);
         opponentCurrentMaxHealthLabel.text = [NSString stringWithFormat:@"%d/%d", 0, (int)total];
@@ -195,7 +212,7 @@
 
 - (void)setBoost:(int)boostButtonIndex
 {
-    NSLog(@"boostButtonIndex = %d", boostButtonIndex);
+    //NSLog(@"boostButtonIndex = %d", boostButtonIndex);
     if (boostButtonIndex == 0) {
         UIImage *healthBoostButtonBgImage = [UIImage imageNamed:@"boostHudHealthBG.png"];
         healthBoostButtonBgImageView = [[UIImageView alloc] initWithImage:healthBoostButtonBgImage];
@@ -253,7 +270,7 @@
     
     [self animateButtonBackgrounds:boostsArray];
     
-    NSLog(@"setBoost called. boostsData 0 : %@", [[boostsData getBoostsDataForBoostIndex:0] objectForKey:@"boostimagesmall"]);
+    //NSLog(@"setBoost called. boostsData 0 : %@", [[boostsData getBoostsDataForBoostIndex:0] objectForKey:@"boostimagesmall"]);
 }
 
 - (void)animateButtonBackgrounds:(NSMutableArray *)images
@@ -265,7 +282,7 @@
 
 - (void)restoreHealthBoostPressed:(id)sender
 {
-    NSLog(@"HealthBoost pressed from the PlayerHudModule.");
+    //NSLog(@"HealthBoost pressed from the PlayerHudModule.");
     boostFullHealth.alpha = 0.5;
     boostFullHealth.enabled = NO;
     [[BattleManager sharedManager] restoreHealth];

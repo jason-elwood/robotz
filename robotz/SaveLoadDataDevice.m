@@ -95,7 +95,7 @@
         NSNumber *tempNumber = [NSNumber numberWithInt:newInt];
         [prefs setObject:tempNumber forKey:constants.PUZZLESTARTINDEX];
     }
-    NSLog(@"getPuzzleStartIndeWithPuzzlePiecesLength = %d", [[prefs objectForKey:constants.PUZZLESTARTINDEX] intValue]);
+    //NSLog(@"getPuzzleStartIndeWithPuzzlePiecesLength = %d", [[prefs objectForKey:constants.PUZZLESTARTINDEX] intValue]);
     return [[prefs objectForKey:constants.PUZZLESTARTINDEX] intValue];
 }
 
@@ -128,28 +128,28 @@
 {
     int newDamage = [[prefs objectForKey:constants.DAMAGE] intValue] + damage;
     [prefs setObject:[NSNumber numberWithInteger:newDamage] forKey:constants.DAMAGE];
-    NSLog(@"setting damage to : %d", damage);
+    //NSLog(@"setting damage to : %d", damage);
 }
 
 - (void)setDefense:(int)defense
 {
     int newDefense = [[prefs objectForKey:constants.DEFENSE] intValue] + defense;
     [prefs setObject:[NSNumber numberWithInteger:newDefense] forKey:constants.DEFENSE];
-    NSLog(@"setting damage to : %d", defense);
+    //NSLog(@"setting damage to : %d", defense);
 }
 
 - (void)setRepair:(int)repair
 {
     int newRepair = [[prefs objectForKey:constants.REPAIR] intValue] + repair;
     [prefs setObject:[NSNumber numberWithInteger:newRepair] forKey:constants.REPAIR];
-    NSLog(@"setting damage to : %d", repair);
+    //NSLog(@"setting damage to : %d", repair);
 }
 
 - (void)setAgility:(int)agility
 {
     int newAgility = [[prefs objectForKey:constants.AGILITY] intValue] + agility;
     [prefs setObject:[NSNumber numberWithInteger:newAgility] forKey:constants.AGILITY];
-    NSLog(@"setting damage to : %d", agility);
+    //NSLog(@"setting damage to : %d", agility);
 }
 
 - (void)setCurrentExperience:(int)experience
@@ -183,7 +183,7 @@
 
 - (void)setPlayersMaxHitPoints:(int)hp
 {
-    NSLog(@"PlayersMaxHitPoints set to : %d", hp);
+    //NSLog(@"PlayersMaxHitPoints set to : %d", hp);
     [prefs setObject:[NSNumber numberWithInt:hp] forKey:constants.MAXHITPOINTS];
 }
 
@@ -275,7 +275,7 @@
 - (void)setCurrentPlanet:(NSString*)planet
 {
     [prefs setValue:planet forKey:constants.CURRENTPLANET];
-    NSLog(@"Current Planet = %@", planet);
+    //NSLog(@"Current Planet = %@", planet);
 }
 
 - (void)addResurrection
@@ -284,7 +284,7 @@
         [prefs setObject:[NSNumber numberWithInteger:0] forKey:constants.RESURRECTIONS];
     }
     [prefs setObject:[NSNumber numberWithInt:[[prefs objectForKey:constants.RESURRECTIONS] intValue] + 1] forKey:constants.RESURRECTIONS];
-    NSLog(@"Adding resurrection to device.  Resurrections : %d", [[prefs objectForKey:constants.RESURRECTIONS] intValue]);
+    //NSLog(@"Adding resurrection to device.  Resurrections : %d", [[prefs objectForKey:constants.RESURRECTIONS] intValue]);
 }
 
 - (int)getResurrections
@@ -317,7 +317,7 @@
 
 - (void)resetDamage
 {
-    NSLog(@"reset damage");
+    //NSLog(@"reset damage");
     [prefs setObject:[NSNumber numberWithInt:0] forKey:constants.DAMAGE];
 }
 
@@ -338,7 +338,7 @@
 
 - (void)resetCharacter
 {
-    NSLog(@"reset character");
+    //NSLog(@"reset character");
     [self initializeOpponentDetails];
     [self hideRateMyAppForever:0];
     [self setCharactersLevel:1];
@@ -368,7 +368,7 @@
 - (BOOL)getMusicOn
 {
     return [[prefs objectForKey:constants.MUSICISON] intValue];
-    NSLog(@"getMusicOn : %d", [[prefs objectForKey:constants.MUSICISON] intValue]);
+    //NSLog(@"getMusicOn : %d", [[prefs objectForKey:constants.MUSICISON] intValue]);
 }
 
 - (BOOL)getSoundFxOn
@@ -380,7 +380,7 @@
 {
     NSNumber *isOn = [NSNumber numberWithInt:musicOn];
     [prefs setObject:isOn forKey:constants.MUSICISON];
-    NSLog(@"setMusicOn prefs : %d", [[prefs objectForKey:constants.MUSICISON] intValue]);
+    //NSLog(@"setMusicOn prefs : %d", [[prefs objectForKey:constants.MUSICISON] intValue]);
 }
 
 - (void)setSoundFxOn:(BOOL)soundFxOn
@@ -403,7 +403,7 @@
 
 - (int)getNumberOfLogins
 {
-    NSLog(@"number of logins : %d", [[prefs objectForKey:constants.NUMBEROFLOGINS] intValue]);
+    //NSLog(@"number of logins : %d", [[prefs objectForKey:constants.NUMBEROFLOGINS] intValue]);
     if ([[prefs objectForKey:constants.NUMBEROFLOGINS] intValue] > 1000) {
         [prefs setObject:[NSNumber numberWithInteger:1] forKey:constants.NUMBEROFLOGINS];
     }
@@ -429,6 +429,7 @@
     [prefs setObject:[date objectForKey:constants.YEAR] forKey:constants.YEAR];
     [prefs setObject:[date objectForKey:constants.MONTH] forKey:constants.MONTH];
     [prefs setObject:[date objectForKey:constants.DAY] forKey:constants.DAY];
+    NSLog(@"New current date set : %@", date);
 }
 
 - (NSMutableDictionary *)getSavedDate

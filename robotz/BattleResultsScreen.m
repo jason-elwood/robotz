@@ -54,32 +54,36 @@
     
     gamePiecesClearedLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 245, 185, 20)];
     gamePiecesClearedLabel.textAlignment = NSTextAlignmentLeft;
-    [gamePiecesClearedLabel setTextColor:[UIColor orangeColor]];
+    [gamePiecesClearedLabel setTextColor:[UIColor whiteColor]];
+    gamePiecesClearedLabel.font = [UIFont fontWithName:@"Hobo Std" size:18.0];
     gamePiecesClearedLabel.text = @"";
     [self addSubview:gamePiecesClearedLabel];
     
     boostsUsedLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 262, 185, 20)];
     boostsUsedLabel.textAlignment = NSTextAlignmentLeft;
-    [boostsUsedLabel setTextColor:[UIColor orangeColor]];
+    [boostsUsedLabel setTextColor:[UIColor whiteColor]];
+    boostsUsedLabel.font = [UIFont fontWithName:@"Hobo Std" size:18.0];
     boostsUsedLabel.text = @"";
     [self addSubview:boostsUsedLabel];
     
     expEarnedLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 279, 185, 20)];
     expEarnedLabel.textAlignment = NSTextAlignmentLeft;
-    [expEarnedLabel setTextColor:[UIColor orangeColor]];
+    [expEarnedLabel setTextColor:[UIColor whiteColor]];
+    expEarnedLabel.font = [UIFont fontWithName:@"Hobo Std" size:18.0];
     expEarnedLabel.text = @"";
     [self addSubview:expEarnedLabel];
     
     coinsEarnedLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, 296, 185, 20)];
     coinsEarnedLabel.textAlignment = NSTextAlignmentLeft;
-    [coinsEarnedLabel setTextColor:[UIColor orangeColor]];
+    [coinsEarnedLabel setTextColor:[UIColor whiteColor]];
+    coinsEarnedLabel.font = [UIFont fontWithName:@"Hobo Std" size:18.0];
     coinsEarnedLabel.text = @"";
     [self addSubview:coinsEarnedLabel];
     
     finalScoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 345, deviceTypes.deviceWidth, 50)];
     finalScoreLabel.textAlignment = NSTextAlignmentCenter;
     [finalScoreLabel setTextColor:[UIColor whiteColor]];
-    finalScoreLabel.font = [UIFont fontWithName:@"Helvetica" size:35.0];
+    finalScoreLabel.font = [UIFont fontWithName:@"Hobo Std" size:35.0];
     finalScoreLabel.text = @"";
     [self addSubview:finalScoreLabel];
     
@@ -160,7 +164,7 @@
     SaveLoadDataDevice *sldd = [SaveLoadDataDevice sharedManager];
     [sldd setCurrentExperience:remainingXp];
     [sldd setPlayersCoins:[[[sldd getCharData] objectForKey:constants.TOTALCOINS] intValue] + coinsEarned];
-    NSLog(@"saveBattleData - currentExperience = %f, + expEarned = %f = %f", currentExperience, expEarned, currentExperience + expEarned);
+    //NSLog(@"saveBattleData - currentExperience = %f, + expEarned = %f = %f", currentExperience, expEarned, currentExperience + expEarned);
 }
 
 - (void)updateLevelLabel
@@ -215,7 +219,7 @@
 
 - (void)animateLevelUp:(NSTimer *)timer
 {
-    NSLog(@"playerLeveledUp : %d", playerLeveledUp);
+    //NSLog(@"playerLeveledUp : %d", playerLeveledUp);
     if (playerLeveledUp) {
         if (levelUpTextView.alpha < 1.0 && levelUpTextView.frame.origin.y > 100) {
             levelUpTextView.alpha += 0.05;
@@ -239,7 +243,7 @@
 
 - (void)animateStars:(NSTimer *)timer
 {
-    //NSLog(@"animateStars");
+    ////NSLog(@"animateStars");
     int starsEarned = [[BattleManager sharedManager] getNumberStarsEarned];
     if (starsEarned > 0) {
         goldStarleft.alpha += 0.05;
@@ -386,11 +390,11 @@
     [bm resetBoostsUsed];
     [bm resetGamePiecesCleared];
     if (boostUnlocked) {
-        NSLog(@"boostUnlocked.  calling delegate showBoostUnlockedScreen.");
+        //NSLog(@"boostUnlocked.  calling delegate showBoostUnlockedScreen.");
         [delegate showBoostUnlockedScreen:level];
         return;
     }
-    NSLog(@"boost not unlocked.  calling delegate closeBattleResultsScreen.");
+    //NSLog(@"boost not unlocked.  calling delegate closeBattleResultsScreen.");
     [delegate closeBattleResultsScreen];
 }
 

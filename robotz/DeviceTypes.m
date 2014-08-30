@@ -18,6 +18,15 @@
     if (self = [super init]) {
         // if init is called directly, just pass nil to AppId contructor variant
         deviceType = [self getModel];
+        
+        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        CGFloat height = [UIScreen mainScreen].bounds.size.height;
+        
+        //NSLog(@"bounds.size.height : %f", [UIScreen mainScreen].bounds.size.height);
+        
+        deviceWidth = width;
+        deviceHeight = height;
+        
     }
     return self;
 }
@@ -49,6 +58,8 @@
     if ([sDeviceModel isEqual:@"iPad2,1"])   return @"iPad2";      //iPad 2 (WiFi)
     if ([sDeviceModel isEqual:@"iPad2,2"])   return @"iPad2";      //iPad 2 (GSM)
     if ([sDeviceModel isEqual:@"iPad2,3"])   return @"iPad2";      //iPad 2 (CDMA)
+    
+    
     
     NSString *aux = [[sDeviceModel componentsSeparatedByString:@","] objectAtIndex:0];
     

@@ -55,11 +55,11 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = [[event touchesForView:self] anyObject];
+    //UITouch *touch = [[event touchesForView:self] anyObject];
     
-    CGPoint location = [touch locationInView:touch.view];
+    //CGPoint location = [touch locationInView:touch.view];
     
-    NSLog(@"touch location x : %f and y : %f", location.x, location.y);
+    //NSLog(@"touch location x : %f and y : %f", location.x, location.y);
     
     [self toggleSelected:YES];
     
@@ -85,16 +85,16 @@
     CGPoint location = [touch locationInView:touch.view];
     
     if (location.x < -20) {
-        NSLog(@"swap with piece on the left.");
+        //NSLog(@"swap with piece on the left.");
         [delegate swapPieceLeft:self];
     } else if (location.x > self.frame.size.width + 20) {
-        NSLog(@"swap with piece on the right.");
+        //NSLog(@"swap with piece on the right.");
         [delegate swapPieceRight:self];
     } else if (location.y < -20) {
-        NSLog(@"swap with piece above this one");
+        //NSLog(@"swap with piece above this one");
         [delegate swapPieceUp:self];
     } else if (location.y > self.frame.size.height + 20) {
-        NSLog(@"swap with piece below this one");
+        //NSLog(@"swap with piece below this one");
         [delegate swapPieceDown:self];
     }
 }

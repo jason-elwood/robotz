@@ -22,6 +22,7 @@
 
 @protocol InAppPurchaseManagerProtocolBattleScreen <NSObject>
 
+- (void)productLoaded;
 - (void)threeResurrectionsPurchased;
 - (void)transactionFailed;
 

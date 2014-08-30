@@ -106,7 +106,7 @@ const NSUInteger kNumImages     = 5;
 
 - (void)checkForTutorial:(NSTimer *)timer
 {
-    NSLog(@"SelectBoostsScreen.  Show tutorial? : %d", showTutorial);
+    //NSLog(@"SelectBoostsScreen.  Show tutorial? : %d", showTutorial);
     if (showTutorial) {
         [self startTutorial];
     }
@@ -257,7 +257,7 @@ const NSUInteger kNumImages     = 5;
 /*  A Planet was selected.  Use the tag property as a planet index in order to draw the robots for a given planet. */
 - (void)categorySelected:(id)sender
 {
-    NSLog(@"Category %d selected.", [sender tag]);
+    //NSLog(@"Category %d selected.", [sender tag]);
     [self createAndDisplayOpponentListForPlanet:[sender tag]];
     
 }
@@ -283,7 +283,7 @@ const NSUInteger kNumImages     = 5;
     for (int i = 0; i < numRobots; i++) {
         int robotIndexInt = [[[robotsArray objectAtIndex:i] objectForKey:constants.OPPONENTINDEXINT] intValue];
         if ([[[robotsArray objectAtIndex:i] objectForKey:constants.OPPONENTINDEXINT] intValue] == [[[[sldd getOpponentHistoryDetails] objectAtIndex:robotIndexInt] objectForKey:constants.OPPONENTINDEXINT] intValue]) { /* player already beat this robot. */
-            NSLog(@"This robot has been beaten already.");
+            //NSLog(@"This robot has been beaten already.");
             /* show stats with stars */
             UIButton *categoryButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [categoryButton setImage:image forState:UIControlStateNormal];
@@ -352,6 +352,8 @@ const NSUInteger kNumImages     = 5;
                 opponentTypeLabel.text = [[robotsArray objectAtIndex:i] objectForKey:constants.CLASSNAME];
                 [robotScrollView addSubview:opponentTypeLabel];
                 
+                robotScrollView.contentOffset = CGPointMake(0, opponentFrameHeight * i);
+                
                 isTheCurrentChallenger = NO;
             
             } else {
@@ -392,7 +394,7 @@ const NSUInteger kNumImages     = 5;
 - (void)robotSelected:(id)sender
 {
     [delegate showSelectBoostsScreen:[sender tag]];
-    NSLog(@"robotSelected sender.tag : %d", [sender tag]);
+    //NSLog(@"robotSelected sender.tag : %d", [sender tag]);
 }
 
 - (void)selectedRobotLocked:(id)sender
@@ -534,7 +536,7 @@ const NSUInteger kNumImages     = 5;
 
 - (void)displayTutorialScreen1:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen1");
+    //NSLog(@"displayTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:0]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:0]).size.width, ((UIImage*)[tutorialImages objectAtIndex:0]).size.height + 50);
@@ -549,7 +551,7 @@ const NSUInteger kNumImages     = 5;
 
 - (void)closeTutorialScreen1:(id)sender
 {
-    NSLog(@"closeTutorialScreen1");
+    //NSLog(@"closeTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut1ImageView.frame.size.width, tut1ImageView.frame.size.height);
@@ -566,7 +568,7 @@ const NSUInteger kNumImages     = 5;
 
 - (void)displayTutorialScreen2:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen2");
+    //NSLog(@"displayTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:1]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:1]).size.width, ((UIImage*)[tutorialImages objectAtIndex:1]).size.height + 50);
@@ -580,7 +582,7 @@ const NSUInteger kNumImages     = 5;
 
 - (void)closeTutorialScreen2:(id)sender
 {
-    NSLog(@"closeTutorialScreen2");
+    //NSLog(@"closeTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut2ImageView.frame.size.width, tut2ImageView.frame.size.height);
@@ -597,7 +599,7 @@ const NSUInteger kNumImages     = 5;
 
 - (void)displayTutorialScreen3:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen3");
+    //NSLog(@"displayTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut3Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut3ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:1]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:2]).size.width, ((UIImage*)[tutorialImages objectAtIndex:2]).size.height + 50);
@@ -613,7 +615,7 @@ const NSUInteger kNumImages     = 5;
 
 - (void)closeTutorialScreen3:(id)sender
 {
-    NSLog(@"closeTutorialScreen3");
+    //NSLog(@"closeTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut1ImageView.frame.size.width, tut1ImageView.frame.size.height);

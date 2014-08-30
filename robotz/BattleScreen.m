@@ -206,13 +206,6 @@
             endGameButton.frame = CGRectMake(25, 130, endGameImage.size.width, endGameImage.size.height);
             [resultView addSubview:endGameButton];
             
-            UIImage *keepPlayingImage = [UIImage imageNamed:@"keepPlayingButton.png"];
-            keepPlayingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            [keepPlayingButton setImage:keepPlayingImage forState:UIControlStateNormal];
-            [keepPlayingButton addTarget:self action:@selector(keepPlayingBuyRessurections:) forControlEvents:UIControlEventTouchUpInside];
-            keepPlayingButton.frame = CGRectMake(175, 130, keepPlayingImage.size.width, keepPlayingImage.size.height);
-            [resultView addSubview:keepPlayingButton];
-            
             NSDate *date = [NSDate dateWithTimeIntervalSinceNow: 0.0];
             NSTimer *animationTimer = [[NSTimer alloc] initWithFireDate:date interval:0.02 target:self selector:@selector(animatePurchaseRepairs:) userInfo:resultView repeats:NO];
             NSRunLoop *runner = [NSRunLoop currentRunLoop];
@@ -225,6 +218,17 @@
     
 }
 
+- (void)productLoaded
+{
+    UIImage *keepPlayingImage = [UIImage imageNamed:@"keepPlayingButton.png"];
+    keepPlayingButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [keepPlayingButton setImage:keepPlayingImage forState:UIControlStateNormal];
+    [keepPlayingButton addTarget:self action:@selector(keepPlayingBuyRessurections:) forControlEvents:UIControlEventTouchUpInside];
+    keepPlayingButton.frame = CGRectMake(175, 130, keepPlayingImage.size.width, keepPlayingImage.size.height);
+    [resultView addSubview:keepPlayingButton];
+    NSLog(@"Product Loaded : %@", self);
+}
+
 - (void)threeResurrectionsPurchased
 {
     [UIView animateWithDuration:1.0 animations:^{
@@ -235,7 +239,7 @@
     
     [bgAlpha removeFromSuperview];
     [self displayResultSign];
-    NSLog(@"threeResurrectionsPurchased");
+    //NSLog(@"threeResurrectionsPurchased");
 }
 
 - (void)endMatch:(id)sender
@@ -262,7 +266,7 @@
     [resultView addSubview:paymentProgressLabel];
     [keepPlayingButton removeFromSuperview];
     keepPlayingButton = nil;
-    NSLog(@"keepPlayingBuyRessurections");
+    //NSLog(@"keepPlayingBuyRessurections");
 }
 
 - (void)transactionFailed
@@ -293,7 +297,7 @@
     }];
     
     [bgAlpha removeFromSuperview];
-    NSLog(@"keepPlayingUseResurrection");
+    //NSLog(@"keepPlayingUseResurrection");
 }
 
 - (void)animatePurchaseRepairs:(NSTimer *)timer
@@ -325,8 +329,8 @@
 {
     resultGraphic.frame = CGRectMake(0, deviceTypes.deviceHeight + 50, resultGraphic.frame.size.width, resultGraphic.frame.size.height);
     
-    PlayerData *pd = [PlayerData sharedManager];
-    NSLog(@"players level at end of battle : %d", [[[pd getRobotData] objectForKey:constants.PLAYERSLEVEL] intValue]);
+    //PlayerData *pd = [PlayerData sharedManager];
+    //NSLog(@"players level at end of battle : %d", [[[pd getRobotData] objectForKey:constants.PLAYERSLEVEL] intValue]);
     
     [delegate showResultsScreen];
 }
@@ -341,7 +345,7 @@
     if (animatingMessage) {
         return;
     }
-    NSLog(@"displayEncouragingMessage : %@", message);
+    //NSLog(@"displayEncouragingMessage : %@", message);
     EncouragingWords *ew = [[EncouragingWords alloc] init];
     [ew displayWithMessage:message];
     ew.frame = CGRectMake(deviceTypes.deviceWidth / 2 - ew.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ew.frame.size.height / 2, ew.frame.size.width, ew.frame.size.height);
@@ -379,7 +383,7 @@
     NSTimer *cancelMessageTimer = [[NSTimer alloc] initWithFireDate:date interval:0.02 target:self selector:@selector(noMoreMovesShufflingRemoveMessage:) userInfo:nil repeats:NO];
     NSRunLoop *runner = [NSRunLoop currentRunLoop];
     [runner addTimer: cancelMessageTimer forMode: NSDefaultRunLoopMode];
-    NSLog(@"show no more moves message");
+    //NSLog(@"show no more moves message");
 }
 
 - (void)noMoreMovesShufflingRemoveMessage:(NSTimer *)timer
@@ -390,7 +394,7 @@
         return;
     }
     [animations fadeOutView:noMoreMatchesGraphic];
-    NSLog(@"remove no more moves message");
+    //NSLog(@"remove no more moves message");
 }
 
 - (void)resetMessageAnimation:(NSTimer *)timer
@@ -510,7 +514,7 @@
 
 - (void)displayTutorialScreen1:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen1");
+    //NSLog(@"displayTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:0]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:0]).size.width, ((UIImage*)[tutorialImages objectAtIndex:0]).size.height + 50);
@@ -525,7 +529,7 @@
 
 - (void)closeTutorialScreen1:(id)sender
 {
-    NSLog(@"closeTutorialScreen1");
+    //NSLog(@"closeTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut1ImageView.frame.size.width, tut1ImageView.frame.size.height);
@@ -542,7 +546,7 @@
 
 - (void)displayTutorialScreen2:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen2");
+    //NSLog(@"displayTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:1]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:1]).size.width, ((UIImage*)[tutorialImages objectAtIndex:1]).size.height + 50);
@@ -556,7 +560,7 @@
 
 - (void)closeTutorialScreen2:(id)sender
 {
-    NSLog(@"closeTutorialScreen2");
+    //NSLog(@"closeTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut2ImageView.frame.size.width, tut2ImageView.frame.size.height);
@@ -573,7 +577,7 @@
 
 - (void)displayTutorialScreen3:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen3");
+    //NSLog(@"displayTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut3Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut3ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:1]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:2]).size.width, ((UIImage*)[tutorialImages objectAtIndex:2]).size.height + 50);
@@ -589,7 +593,7 @@
 
 - (void)closeTutorialScreen3:(id)sender
 {
-    NSLog(@"closeTutorialScreen3");
+    //NSLog(@"closeTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut2ImageView.frame.size.width, tut2ImageView.frame.size.height);

@@ -49,11 +49,11 @@
     opponentIndexInt = [[opponentData objectForKey:constants.OPPONENTINDEXINT] intValue];
     
     
-    NSLog(@"expAwarded : %d", expAwarded);
-    NSLog(@"coinsAwarded : %d", coinsAwarded);
-    NSLog(@"bgImage : %@", bgImage);
-    NSLog(@"robotImage : %@", robotImage);
-    NSLog(@"pointsForOneStar : %d", pointsForOneStar);
+    //NSLog(@"expAwarded : %d", expAwarded);
+    //NSLog(@"coinsAwarded : %d", coinsAwarded);
+    //NSLog(@"bgImage : %@", bgImage);
+    //NSLog(@"robotImage : %@", robotImage);
+    //NSLog(@"pointsForOneStar : %d", pointsForOneStar);
 }
 
 - (void)opponentTakesDamage:(int)damage

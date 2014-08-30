@@ -36,8 +36,8 @@
     
     int numBuffsUsed;
     
-    UILabel *scoreLabel;
     UILabel *pointsLabel;
+    THLabel *scoreLabel;
     THLabel *playersCurrentMaxHealthLabel;
     THLabel *opponentCurrentMaxHealthLabel;
     THLabel *numResurrectionsLabel;

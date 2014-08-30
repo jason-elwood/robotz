@@ -13,37 +13,5 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "robotz/PuzzleModule.m"
-            timestampString = "404258225.058381"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "586"
-            endingLineNumber = "586"
-            landmarkName = "-removeMatches:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "robotz/PuzzleModule.m"
-            timestampString = "404258225.058381"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "591"
-            endingLineNumber = "591"
-            landmarkName = "-removeMatches:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

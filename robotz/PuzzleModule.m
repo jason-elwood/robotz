@@ -18,7 +18,7 @@
     if (self) {
         // Initialization code
         noMatchesNeedToRedrawScreen = NO;
-        NSLog(@"Initializing Puzzle Module.");
+        //NSLog(@"Initializing Puzzle Module.");
         firstPlay = YES;
         constants = [[Constants alloc] init];
         BattleManager *bm = [BattleManager sharedManager];
@@ -50,7 +50,7 @@
 // set up grid and start game timer
 - (void)startPuzzleCreation
 {
-    NSLog(@"startPuzzleCreation");
+    //NSLog(@"startPuzzleCreation");
     
     UIImage *puzzleBGImage = [UIImage imageNamed:@"puzzleModuleBackground.png"];
     UIImageView *puzzleBGImageView = [[UIImageView alloc] initWithImage:puzzleBGImage];
@@ -96,7 +96,7 @@
     newBoardPieceIndex = 0;
     [timer invalidate];
     timer = nil;
-    NSLog(@"setUpGrid");
+    //NSLog(@"setUpGrid");
     //create sprite
     gameSprite = [[UIView alloc] initWithFrame:CGRectMake(3, 2, 320, 320)];
     gameSprite.backgroundColor = [UIColor clearColor];
@@ -112,13 +112,13 @@
         
         // try again if matches are present
         if ([[self lookForMatches] count] != 0) {
-            NSLog(@"Matches. rebuilding grid");
+            //NSLog(@"Matches. rebuilding grid");
             //continue;
             [self redrawScreen];
         }
         // try again if no possible moves
         if ([self lookForPossibles] == NO) {
-            NSLog(@"No possible matches. rebuilding grid.");
+            //NSLog(@"No possible matches. rebuilding grid.");
             //continue;
             [self redrawScreen];
         }
@@ -131,7 +131,7 @@
     [self addSubview:gameSprite];
     gridCreated = YES;
     
-    NSLog(@"adding the gameSprite");
+    //NSLog(@"adding the gameSprite");
 }
 
 // ******************************************************************************************************************
@@ -146,7 +146,7 @@
 - (Piece *)addPieceRow:(int)row andCol:(int)col
 {
     if (pieceIndex > [currentGameBoard count] - 1) { // This happens when we reach the last piece in the currentGameBoard array. So reset to 0.
-        NSLog(@"Reset pieceIndex.");
+        //NSLog(@"Reset pieceIndex.");
         pieceIndex = 0;
     }
     
@@ -204,7 +204,7 @@
             }
         }
     }
-    NSLog(@"matches : %d", [matchList count]);
+    //NSLog(@"matches : %d", [matchList count]);
     return matchList;
 }
 
@@ -251,7 +251,7 @@
 // look to see whether a possible move is on the board
 - (BOOL)lookForPossibles
 {
-    NSLog(@"lookForPossibles");
+    //NSLog(@"lookForPossibles");
     
     for (int col = 0; col < 6; col++) {
         for (int row = 0; row < 5; row++) {
@@ -355,7 +355,7 @@
     }
 }
 
-#warning These 2 functions is where we need to implement the initial swap and use a timer to reswap if there is no match.
+//#warning These 2 functions is where we need to implement the initial swap and use a timer to reswap if there is no match.
 // ******************************************************************************************************
 // | HANDLES SENDING THE PIECES TO SWAPPIECES AND THEN LOOKING FOR A MATCH
 // | Updates:
@@ -475,7 +475,7 @@
         // no matches found, redraw screen
         if ([matches count] == 0) {
             if (![self lookForPossibles]) {
-                NSLog(@"no matches found");
+                //NSLog(@"no matches found");
                 noMatchesNeedToRedrawScreen = YES;
                 //[self redrawScreen];
             }
@@ -529,13 +529,13 @@
     }
     NSMutableArray *newMutableArray = [[NSMutableArray alloc] initWithArray:newArray];
     
-    NSLog(@"newArray : %@", newMutableArray);
+    //NSLog(@"newArray : %@", newMutableArray);
     
     for(int i = 0; i < [newMutableArray count]; i++){
         for(int j = i + 1; j < [newMutableArray count]; j++){
             if([newMutableArray objectAtIndex:i] == [newMutableArray objectAtIndex:j]) {
                 [newMutableArray removeObjectAtIndex:j];
-                NSLog(@"duplicate piece removed.");
+                //NSLog(@"duplicate piece removed.");
             }
         }
     }
@@ -570,7 +570,7 @@
     // no matches found, maybe the game is over?
     if ([matches count] == 0) {
         if (![self lookForPossibles]) {
-            NSLog(@"no matches found");
+            //NSLog(@"no matches found");
             [self redrawScreen];
         }
     }
@@ -603,7 +603,7 @@
 
 - (void)animationsEnded:(NSTimer *)timer
 {
-    NSLog(@"animationsEnded");
+    //NSLog(@"animationsEnded");
     [completedTimer invalidate];
     completedTimer = nil;
     BattleManager *bm = [BattleManager sharedManager];
@@ -679,7 +679,7 @@
 
 - (void)lockPlayerControls
 {
-    NSLog(@"lockPlayerControls");
+    //NSLog(@"lockPlayerControls");
     if (!blockPiecesView) {
         blockPiecesView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, gameSprite.frame.size.width, gameSprite.frame.size.height)];
         blockPiecesView.backgroundColor = [UIColor clearColor];
@@ -696,7 +696,7 @@
         [self redrawScreen];
         noMatchesNeedToRedrawScreen = NO;
     }
-    NSLog(@"unlockPlayerControls");
+    //NSLog(@"unlockPlayerControls");
     [blockPiecesView removeFromSuperview];
     blockPiecesView = nil;
     [animationClass animateAlphaImageViewsLayer:gameSprite.layer from:0.3 to:1.0 duration:0.5 repeat:0];
@@ -743,14 +743,14 @@
 
 - (void)playersMove:(NSMutableArray *)matches
 {
-    NSLog(@"playersMove matches: %@", matches);
+    //NSLog(@"playersMove matches: %@", matches);
     BattleManager *bm = [BattleManager sharedManager];
     [bm playerMakesMoveWithPieceType:((Piece *)[[matches objectAtIndex:0] objectAtIndex:0]).typeIndex numberOfPieces:[[matches objectAtIndex:0] count]];
 }
 
 - (void)opponentAttack:(int)attackType
 {
-    NSLog(@"opponentAttack!!!!!!!!!!!!! attackType : %d", attackType);
+    //NSLog(@"opponentAttack!!!!!!!!!!!!! attackType : %d", attackType);
     BattleManager *bm = [BattleManager sharedManager];
     [bm opponentAnimationsEnded];
 }
@@ -766,7 +766,7 @@
             }
         }
     }
-    NSLog(@"tempPiec col : %d and row : %d and swapping = %d", tempPiece.col, tempPiece.row, tempPiece.swapping);
+    //NSLog(@"tempPiec col : %d and row : %d and swapping = %d", tempPiece.col, tempPiece.row, tempPiece.swapping);
 }
 
 - (void)swapPieceRight:(id)piece
@@ -780,7 +780,7 @@
             }
         }
     }
-    NSLog(@"tempPiec col : %d and row : %d and swapping = %d", tempPiece.col, tempPiece.row, tempPiece.swapping);
+    //NSLog(@"tempPiec col : %d and row : %d and swapping = %d", tempPiece.col, tempPiece.row, tempPiece.swapping);
 }
 
 - (void)swapPieceUp:(id)piece
@@ -794,7 +794,7 @@
             }
         }
     }
-    NSLog(@"tempPiec col : %d and row : %d and swapping = %d", tempPiece.col, tempPiece.row, tempPiece.swapping);
+    //NSLog(@"tempPiec col : %d and row : %d and swapping = %d", tempPiece.col, tempPiece.row, tempPiece.swapping);
 }
 
 - (void)swapPieceDown:(id)piece
@@ -808,7 +808,7 @@
             }
         }
     }
-    NSLog(@"tempPiec col : %d and row : %d and swapping = %d", tempPiece.col, tempPiece.row, tempPiece.swapping);
+    //NSLog(@"tempPiec col : %d and row : %d and swapping = %d", tempPiece.col, tempPiece.row, tempPiece.swapping);
 }
 
 /*

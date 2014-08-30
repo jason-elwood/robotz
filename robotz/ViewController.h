@@ -58,6 +58,9 @@
     UIView *currentView;
     NSString *currentlyPlayingMusic;
     
+    NSString *rateAppString;
+    NSString *facebookMessageString;
+    
     //GKTurnBasedMatch *myMatch;
     
     BOOL characterSaved;

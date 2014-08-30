@@ -40,11 +40,11 @@
 //    [sldd setMusicOn:YES];
 //    [sldd setSoundFxOn:YES];
     if (sldd.thereIsSavedData) {
-        NSLog(@"there is saved data");
+        //NSLog(@"there is saved data");
         characterSaved = YES;
         [self refreshPlayerData];
         if (![sldd getMusicOn]) {
-            NSLog(@"Turn off music from ViewController");
+            //NSLog(@"Turn off music from ViewController");
             [[AudioPlayer sharedManager] turnOffAllMusic];
         }
         if (![sldd getSoundFxOn]) {
@@ -78,7 +78,7 @@
 //    [GKTurnBasedMatch loadMatchesWithCompletionHandler:^(NSArray *matches, NSError *error) {
 //        if (matches)
 //        {
-//            NSLog(@"loading matches : %@", matches);
+//            //NSLog(@"loading matches : %@", matches);
 //            // Use the match data to populate your user interface.
 //        }
 //    }];
@@ -87,13 +87,13 @@
 //- (void)turnBasedMatchmakerViewControllerWasCancelled:(GKTurnBasedMatchmakerViewController *)viewController
 //{
 //    [self dismissViewControllerAnimated:YES completion:nil];
-//    NSLog(@"turnBasedMatchmakerViewControllerWasCancelled");
+//    //NSLog(@"turnBasedMatchmakerViewControllerWasCancelled");
 //}
 //
 //- (void)turnBasedMatchmakerViewController:(GKTurnBasedMatchmakerViewController *)viewController didFailWithError:(NSError *)error
 //{
 //    [self dismissViewControllerAnimated:YES completion:nil];
-//    NSLog(@"turnBasedMatchmakerViewController didFailWithError");
+//    //NSLog(@"turnBasedMatchmakerViewController didFailWithError");
 //}
 //
 //- (void)turnBasedMatchmakerViewController:(GKTurnBasedMatchmakerViewController *)viewController didFindMatch:(GKTurnBasedMatch *)match
@@ -101,13 +101,13 @@
 //    myMatch = match;
 //    [self dismissViewControllerAnimated:YES completion:nil];
 //    [self performSegueWithIdentifier:@"GamePlayScene" sender:match];
-//    NSLog(@"turnBasedMatchmakerViewController didFindMatch");
+//    //NSLog(@"turnBasedMatchmakerViewController didFindMatch");
 //    [self loadAndDisplayMatchData];
 //}
 //
 //- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 //{
-//    NSLog(@"performSegueWithIdentifier identifier: %@ sender: %@", identifier, sender);
+//    //NSLog(@"performSegueWithIdentifier identifier: %@ sender: %@", identifier, sender);
 //}
 //
 //- (void )prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -118,7 +118,7 @@
 ////        gameVC.delegate = self;
 ////        gameVC.match = (GKTurnBasedMatch*) sender;
 //        
-//        NSLog(@"prepareForSegue...");
+//        //NSLog(@"prepareForSegue...");
 //    }
 //}
 //
@@ -132,9 +132,9 @@
 //        //[gameDictionary addEntriesFromDictionary: myDict];
 //        //[self populateExistingGameBoard];
 //        if (error) {
-//            NSLog(@"loadMatchData - %@", [error localizedDescription]);
+//            //NSLog(@"loadMatchData - %@", [error localizedDescription]);
 //        } else {
-//            NSLog(@"loadAndDisplayMatchData : %@", matchData);
+//            //NSLog(@"loadAndDisplayMatchData : %@", matchData);
 //        }
 //        
 //    }];
@@ -181,12 +181,12 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"alertView buttonIndex : %d", buttonIndex);
+    //NSLog(@"alertView buttonIndex : %d", buttonIndex);
     if (buttonIndex == 0) {
-        [[SaveLoadDataDevice sharedManager] hideRateMyAppForever:[NSNumber numberWithInt:1]];
+        [[SaveLoadDataDevice sharedManager] hideRateMyAppForever:[NSNumber numberWithInt:-1]];
     } else if (buttonIndex == 1) {
         [self reviewApp];
-        [[SaveLoadDataDevice sharedManager] hideRateMyAppForever:[NSNumber numberWithInt:1]];
+        [[SaveLoadDataDevice sharedManager] hideRateMyAppForever:[NSNumber numberWithInt:-1]];
     } else {
         // Do nothing.
     }
@@ -194,8 +194,7 @@
 
 - (void)reviewApp
 {
-    NSString *str = [dbRetrieval getAppURL];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:rateAppString]];
 }
 
 - (void)showFacebookView:(StoreScreen *)view
@@ -209,27 +208,27 @@
         {
             if (result == SLComposeViewControllerResultCancelled)
             {
-                NSLog(@"Cancelled");
+                //NSLog(@"Cancelled");
                 
             }
             else
             {
-                NSLog(@"Done");
+                //NSLog(@"Done");
                 [view facebookShareConfirmed];
             }
             
             [slVC dismissViewControllerAnimated:YES completion:Nil];
         };
         slVC.completionHandler          =   handler;
-        [slVC setInitialText:@"I    Robotz. Available publicly November 2013!"];
+        [slVC setInitialText:facebookMessageString];
         [slVC addURL:[NSURL URLWithString:@"http://droppedpixelgames.com/"]];
-        [slVC addImage:[UIImage imageNamed:@"RobotzComingSoonGraphic.png"]];
+        [slVC addImage:[UIImage imageNamed:@"RobotzAvailableNowGraphicBlue.png"]];
         
         [self presentViewController:slVC animated:YES completion:Nil];
 //    }
 //    else
 //    {
-//        NSLog(@"Service Unavailable!!!");
+//        //NSLog(@"Service Unavailable!!!");
 //    }
 }
 
@@ -255,6 +254,8 @@
 {
     dbRetrieval = [[DataBaseRetrieval alloc] init];
     [dbRetrieval getPlayerDataFromDatabase];
+    rateAppString = [dbRetrieval getAppURL];
+    facebookMessageString = [dbRetrieval getFacebookMessage];
 }
 
 - (void)clearScreen:(UIView *)screen
@@ -290,7 +291,7 @@
     
     if (currentlyPlayingMusic != nil) {
         //[[AudioPlayer sharedManager] StopMusic:currentlyPlayingMusic];
-        NSLog(@"stopping : %@", currentlyPlayingMusic);
+        //NSLog(@"stopping : %@", currentlyPlayingMusic);
     }
     
     [[AudioPlayer sharedManager] PlayMusic:constants.MUSICMAINMENU atVolume:1.0];
@@ -302,8 +303,7 @@
     // Display the request to rate the app or not.
     if (![[SaveLoadDataDevice sharedManager] hideRateMyAppForever:[NSNumber numberWithInt:-1]]) {
         if ([[SaveLoadDataDevice sharedManager] getNumberOfLogins] % 3 == 0) {
-            NSString *str = [dbRetrieval getAppURL];
-            if (str == nil || [str isEqualToString:@""]) {
+            if (rateAppString == nil || [rateAppString isEqualToString:@""]) {
                 return;
             } else {
                 [self reviewAppRequest];
@@ -368,7 +368,7 @@
 
 - (void)startGame
 {
-    NSLog(@"Start Game!");
+    //NSLog(@"Start Game!");
     [self checkForSavedCharacter];
     
 }
@@ -413,7 +413,7 @@
 
 - (void)showMainMenu
 {
-    NSLog(@"Show Main Menu!");
+    //NSLog(@"Show Main Menu!");
     mainMenu = [[MainMenu alloc] initWithFrame:CGRectMake(0, 0, deviceTypes.deviceWidth, deviceTypes.deviceHeight)];
     mainMenu.delegate = self;
     [self.view addSubview:mainMenu];
@@ -442,7 +442,7 @@
 
 - (void)showLevelMapScreen
 {
-    NSLog(@"Show Level Map Screen");
+    //NSLog(@"Show Level Map Screen");
     levelMapScreen = [[LevelMap alloc] initWithFrame:CGRectMake(0, 0, deviceTypes.deviceWidth, deviceTypes.deviceHeight)];
     levelMapScreen.delegate = self;
     [self.view addSubview:levelMapScreen];
@@ -473,7 +473,7 @@
 
 - (void)showSelectBoostsScreen:(int)opponentIndex
 {
-    NSLog(@"Show Select Boosts Screen");
+    //NSLog(@"Show Select Boosts Screen");
     [self refreshPlayerData];
     selectBoostsScreen = [[SelectBoostsScreen alloc] initWithFrame:CGRectMake(0, -deviceTypes.deviceHeight- 50, deviceTypes.deviceWidth, deviceTypes.deviceHeight)];
     selectBoostsScreen.delegate = self;
@@ -498,7 +498,7 @@
 
 - (void)boostsAnimationFinished
 {
-    NSLog(@"Boosts Screen Animation Finished!");
+    //NSLog(@"Boosts Screen Animation Finished!");
     [self clearScreen:selectBoostsScreen];
 }
 
@@ -529,7 +529,7 @@
 
 - (void)showGameMenu
 {
-    NSLog(@"Menu button pressed.");
+    //NSLog(@"Menu button pressed.");
     gameMenu = [[GameMenu alloc] initWithFrame:CGRectMake(0, -deviceTypes.deviceHeight - 100, deviceTypes.deviceWidth, gameMenu.frame.size.height)];
     gameMenu.delegate = self;
     [gameMenu setEasingFunction:BounceEaseOut forKeyPath:@"frame"];
@@ -581,14 +581,14 @@
 {
     [battleScreen startAnimationOutPlayerWon:YES];
     playerWon = YES;
-    NSLog(@"Player Wins!");
+    //NSLog(@"Player Wins!");
 }
 
 - (void)battleEndedPlayerLost
 {
     [battleScreen startAnimationOutPlayerWon:NO];
     playerWon = NO;
-    NSLog(@"Player Loses!");
+    //NSLog(@"Player Loses!");
 }
 
 - (void)showResultsScreen
@@ -680,7 +680,7 @@
 
 - (void)setCurrentlyPlayingMusic:(NSString *)music
 {
-    NSLog(@"setCurrentlyPlayingMusic");
+    //NSLog(@"setCurrentlyPlayingMusic");
     currentlyPlayingMusic = music;
 }
 

@@ -50,9 +50,9 @@
             trueDamage = 0;
         }
     }
-    NSLog(@"damage : %d, defense : %d, agility : %d, numPieces : %d, opponentBonus : %d.", damage, defense, agility, numPieces, opponentBonus);
+    //NSLog(@"damage : %d, defense : %d, agility : %d, numPieces : %d, opponentBonus : %d.", damage, defense, agility, numPieces, opponentBonus);
     
-    NSLog(@"trueDamage : %d", trueDamage);
+    //NSLog(@"trueDamage : %d", trueDamage);
     
     return trueDamage;
 }

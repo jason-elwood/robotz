@@ -148,7 +148,7 @@
 
 - (void)checkForTutorial:(NSTimer *)timer
 {
-    NSLog(@"SelectBoostsScreen.  Show tutorial? : %d", showTutorial);
+    //NSLog(@"SelectBoostsScreen.  Show tutorial? : %d", showTutorial);
     if (showTutorial) {
         [self startTutorial];
     }
@@ -179,7 +179,7 @@
 - (void)boostOneTouch:(id)sender
 {
     if (!boostOneSelected) {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         if (numBoostsSelected < 3) {
             
             UIImage *boostOneImage = [UIImage imageNamed:[[boostsData getBoostsDataForBoostIndex:0] objectForKey:constants.BOOSTIMAGELARGE]];
@@ -214,7 +214,7 @@
             //UIAlertView;
         }
     } else {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         BOOL thirdSelected = NO;
         if (boost1ButtonLarge.frame.origin.x > 125) {
             thirdSelected = YES;
@@ -258,7 +258,7 @@
 - (void)boostTwoTouch:(id)sender
 {
     if (!boostTwoSelected) {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         if (numBoostsSelected < 3) {
             UIImage *boostTwoImage = [UIImage imageNamed:[[boostsData getBoostsDataForBoostIndex:1] objectForKey:constants.BOOSTIMAGELARGE]];
             boost2ButtonLarge = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -291,7 +291,7 @@
             //UIAlertView;
         }
     } else {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         BOOL thirdSelected = NO;
         if (boost2ButtonLarge.frame.origin.x > 125) {
             thirdSelected = YES;
@@ -335,7 +335,7 @@
 - (void)boostThreeTouch:(id)sender
 {
     if (!boostThreeSelected) {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         if (numBoostsSelected < 3) {
             UIImage *boostThreeImage = [UIImage imageNamed:[[boostsData getBoostsDataForBoostIndex:2] objectForKey:constants.BOOSTIMAGELARGE]];
             boost3ButtonLarge = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -364,7 +364,7 @@
             //UIAlertView;
         }
     } else {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         BOOL thirdSelected = NO;
         if (boost3ButtonLarge.frame.origin.x > 125) {
             thirdSelected = YES;
@@ -404,7 +404,7 @@
 - (void)boostFourTouch:(id)sender
 {
     if (!boostFourSelected) {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         if (numBoostsSelected < 3) {
             UIImage *boostFourImage = [UIImage imageNamed:[[boostsData getBoostsDataForBoostIndex:3] objectForKey:constants.BOOSTIMAGELARGE]];
             boost4ButtonLarge = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -433,7 +433,7 @@
             //UIAlertView;
         }
     } else {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         BOOL thirdSelected = NO;
         if (boost4ButtonLarge.frame.origin.x > 125) {
             thirdSelected = YES;
@@ -473,7 +473,7 @@
 - (void)boostFiveTouch:(id)sender
 {
     if (!boostFiveSelected) {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         if (numBoostsSelected < 3) {
             UIImage *boostFiveImage = [UIImage imageNamed:[[boostsData getBoostsDataForBoostIndex:4] objectForKey:constants.BOOSTIMAGELARGE]];
             boost5ButtonLarge = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -502,7 +502,7 @@
             //UIAlertView;
         }
     } else {
-        NSLog(@"numBoostsSelected : %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected : %d", numBoostsSelected);
         BOOL thirdSelected = NO;
         if (boost5ButtonLarge.frame.origin.x > 125) {
             thirdSelected = YES;
@@ -556,7 +556,7 @@
         [sorryAlert show];
     } else {
         // send boosts to the BattleManager!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        NSLog(@"numBoostsSelected = %d", numBoostsSelected);
+        //NSLog(@"numBoostsSelected = %d", numBoostsSelected);
         NSMutableArray *boostsArray = [[NSMutableArray alloc] init];
         
         if (boostOneSelected) {
@@ -669,7 +669,7 @@
 
 - (void)displayTutorialScreen1:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen1");
+    //NSLog(@"displayTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:0]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:0]).size.width, ((UIImage*)[tutorialImages objectAtIndex:0]).size.height + 50);
@@ -684,7 +684,7 @@
 
 - (void)closeTutorialScreen1:(id)sender
 {
-    NSLog(@"closeTutorialScreen1");
+    //NSLog(@"closeTutorialScreen1");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut1Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut1ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut1ImageView.frame.size.width, tut1ImageView.frame.size.height);
@@ -701,7 +701,7 @@
 
 - (void)displayTutorialScreen2:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen2");
+    //NSLog(@"displayTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:1]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:1]).size.width, ((UIImage*)[tutorialImages objectAtIndex:1]).size.height + 50);
@@ -715,7 +715,7 @@
 
 - (void)closeTutorialScreen2:(id)sender
 {
-    NSLog(@"closeTutorialScreen2");
+    //NSLog(@"closeTutorialScreen2");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut2ImageView.frame.size.width, tut2ImageView.frame.size.height);
@@ -732,7 +732,7 @@
 
 - (void)displayTutorialScreen3:(NSTimer *)timer
 {
-    NSLog(@"displayTutorialScreen3");
+    //NSLog(@"displayTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut3Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut3ImageView.frame.size.width / 2, deviceTypes.deviceHeight / 2 - ((UIImage*)[tutorialImages objectAtIndex:1]).size.height / 2, ((UIImage*)[tutorialImages objectAtIndex:2]).size.width, ((UIImage*)[tutorialImages objectAtIndex:2]).size.height + 50);
@@ -748,7 +748,7 @@
 
 - (void)closeTutorialScreen3:(id)sender
 {
-    NSLog(@"closeTutorialScreen3");
+    //NSLog(@"closeTutorialScreen3");
     [UIView animateWithDuration:0.5 animations:^{
         
         tut2Container.frame = CGRectMake(deviceTypes.deviceWidth / 2 - tut2ImageView.frame.size.width / 2, deviceTypes.deviceHeight, tut2ImageView.frame.size.width, tut2ImageView.frame.size.height);
